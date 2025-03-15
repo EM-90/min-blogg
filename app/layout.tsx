@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
+import { Playfair_Display } from "next/font/google";
+import Navbar from "@/components/Navbar";
+
+const headerFont = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "800"],
+  variable: "--header-font",
+});
 
 export const metadata: Metadata = {
   title: "UU-laben",
@@ -14,8 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={headerFont.variable}>
+      <body>
+        <Navbar />
+        <main className=" w-2/3 mx-auto pl-6 pr-6 pt-10">{children}</main>
+      </body>
     </html>
   );
 }

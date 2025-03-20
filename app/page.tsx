@@ -9,7 +9,7 @@ export default function Home() {
         av teknologi og hvordan det kan skape en bedre brukeropplevelse for alle
       </p>
       <Link href="#">
-        <button className=" p-4 text-2xl rounded-md border-4 ">
+        <button className=" p-4 text-2xl rounded-md border-4">
           Forslag til tema
         </button>
       </Link>

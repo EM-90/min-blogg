@@ -6,9 +6,20 @@ h3 {
   font-family: var(--header-font), sans-serif;
 }
 
+p,
+li {
+  font-family: var(--text-font);
+  color: black;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --headerColor-hjem: #436fff;
+  --headerColor-artikler: #43c0ff;
+  --headerColor-kontakt: #ffcd43;
+  --headerColor-guider: #ff6f43;
+  --headerColor-Om: #45cd4a;
 }
 
 @theme inline {

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Playfair_Display, Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import HeaderImage from "@/components/header/HeaderImage";
+
 const headerFont = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "800"],
@@ -14,6 +15,8 @@ const textFont = Poppins({
   weight: ["200", "300", "400"],
   variable: "--text-font",
 });
+
+const mainBgColor = "var(--main-bg-color)";
 
 export const metadata: Metadata = {
   title: "UU-laben",
@@ -28,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${headerFont.variable} ${textFont.variable}`}>
-      <body>
+      <body style={{ backgroundColor: mainBgColor }}>
         <Navbar />
         <HeaderImage />
         <main className="sm:w-2/3 mx-auto pl-6 pr-6 sm:pl-2 sm:pr-2 pt-10">

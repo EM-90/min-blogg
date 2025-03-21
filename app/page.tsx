@@ -9,7 +9,7 @@ export default function Home() {
       btn={
         <Link href="/kontakt">
           <button className="p-4 text-2xl rounded-md border-4">
-            Kontakt oss
+            Kontakt her
           </button>
         </Link>
       }

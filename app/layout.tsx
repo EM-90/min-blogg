@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display, Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
-
+import HeaderImage from "@/components/header/HeaderImage";
 const headerFont = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600", "800"],
@@ -30,7 +30,10 @@ export default function RootLayout({
     <html lang="en" className={`${headerFont.variable} ${textFont.variable}`}>
       <body>
         <Navbar />
-        <main className=" w-2/3 mx-auto pl-6 pr-6 pt-10">{children}</main>
+        <HeaderImage />
+        <main className="sm:w-2/3 mx-auto pl-6 pr-6 sm:pl-2 sm:pr-2 pt-10">
+          {children}
+        </main>
       </body>
     </html>
   );

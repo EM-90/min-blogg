@@ -20,7 +20,7 @@ function Navbar() {
   return (
     <nav
       style={{ backgroundColor: headerColor }}
-      className="flex justify-center relative"
+      className="flex justify-center relative z-20"
     >
       <section className="flex justify-between p-6 w-full lg:w-2/3">
         <div>UU-Laben</div>
@@ -93,7 +93,7 @@ function Navbar() {
               </a>
             </li>
             <li className="group relative w-fit">
-              <a href="#" className="hover:text-black">
+              <a href="/guides" className="hover:text-black">
                 Guider
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </a>

@@ -22,6 +22,7 @@ button {
   --headerColor-guider: #ff6f43;
   --headerColor-om: #45cd4a;
   --main-bg-color: #fffcf4;
+  --info-card-bg: #fff5d6;
 }
 
 @theme inline {

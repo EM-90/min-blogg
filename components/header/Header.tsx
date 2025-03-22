@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Hand, Eye, Ear } from "lucide-react";
 
 interface HeaderProps {
   headerText: string;
@@ -8,20 +9,27 @@ interface HeaderProps {
 
 export const Header = ({ headerText, infoText, btn }: HeaderProps) => {
   return (
-    <section className="w-full relative pb-10 mb-10">
-      <h1
-        style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
-        className=" mb-5 w-full xl:w-2/3"
-      >
-        {headerText}
-      </h1>
+    <article className="w-full relative pb-10 mb-10 ">
+      <section className="">
+        <h1
+          style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
+          className=" mb-2 xl:w-2/3 leading-tight"
+        >
+          {headerText}
+        </h1>
+        <div className="flex gap-2 pb-5">
+          <Eye size={40} />
+          <Hand size={40} />
+          <Ear size={40} />
+        </div>
+      </section>
       <p
         style={{ fontSize: "clamp(1.25rem, 3vw, 2rem)" }}
-        className=" lg:w-1/2 text-xl mb-4"
+        className=" lg:w-1/2 text-xl mb-4  leading-snug"
       >
         {infoText}
       </p>
       {btn && <div>{btn}</div>}
-    </section>
+    </article>
   );
 };

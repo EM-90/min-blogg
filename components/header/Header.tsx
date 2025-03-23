@@ -13,11 +13,11 @@ export const Header = ({ headerText, infoText, btn }: HeaderProps) => {
       <section className="">
         <h1
           style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
-          className=" mb-2 xl:w-2/3 leading-tight"
+          className=" mb-2 xl:w-2/3 leading-tight font-semibold"
         >
           {headerText}
         </h1>
-        <div className="flex gap-2 pb-5">
+        <div className=" hidden gap-2 pb-5">
           <Eye size={40} />
           <Hand size={40} />
           <Ear size={40} />

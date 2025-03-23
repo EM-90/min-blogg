@@ -1,6 +1,7 @@
 import { Header } from "@/components/header/Header";
 import { InfoCard } from "@/components/info/InfoCard";
 import Link from "next/link";
+import { Tag } from "@/components/tag/Tag";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           </Link>
         }
       />
+
       <InfoCard
         headerText="Hvorfor finnes dette nettstedet?"
         textContent={[

@@ -14,11 +14,11 @@ export const Article = ({
   return (
     <article
       style={{ fontSize: "clamp(1rem, 2.5vw, 1.2rem)" }}
-      className=" max-w-96 p-2 my-10"
+      className=" max-w-96 p-2 my-5 hover:underline cursor-pointer"
     >
-      <h2 className="text-3xl font-semibold mb-2 underline">{articleHeader}</h2>
+      <h2 className="text-3xl font-semibold mb-2">{articleHeader}</h2>
       <div>{tagContainer}</div>
-      <p>{articleText}</p>
+      <p className="mt-2">{articleText}</p>
     </article>
   );
 };

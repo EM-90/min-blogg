@@ -4,7 +4,7 @@ interface Tagprops {
 
 export const Tag = ({ tagName }: Tagprops) => {
   return (
-    <span className="color-change border-2 px-4 py-1 m-1 font-normal rounded-full">
+    <span className="color-change border-1 px-4 py-1 font-light text-sm rounded-full">
       {tagName}
     </span>
   );

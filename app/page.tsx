@@ -2,6 +2,8 @@ import { Header } from "@/components/header/Header";
 import { InfoCard } from "@/components/info/InfoCard";
 import Link from "next/link";
 import { Article } from "@/components/article/Article";
+import { Tag } from "@/components/tag/Tag";
+import HeaderImage from "@/components/header/HeaderImage";
 
 export default function Home() {
   return (
@@ -18,19 +20,44 @@ export default function Home() {
         }
       />
 
-      <InfoCard
-        headerText="Hvorfor finnes dette nettstedet?"
-        textContent={[
-          "I slutten av 2024 da jeg begynte i ny jobb, var første gangen jeg tok på meg UU-brillene, og etter det har de ikke blitt tatt ",
-          "Tidligere har jeg jobbet som interaksjonsdesigner med fokus på brukeropplevelser, men det var først i slutten av 2024 da jeg begynte å jobbe med universell utforming av digitale flater at jeg forstod hvor mange som blir ekskludert på grunn av nettsider som ikke er universellt utformet. Jeg har selv laget nettsider som ikke er tilgjenglige for alle. ",
-          "Dette vil jeg få en slutt på selv om jeg vet hvor vanskelig det er hvis man ikke har på seg UU-brillene, eller kanskje har feil styrke i glassene.",
-          "Derfor har jeg laget denne info-siden med artikler og guider både for å hjelpe meg selv og andre, så vi sammen kan skape en digital fremtid tilgjengelig for alle.",
-        ]}
-      />
-      <Article
-        articleHeader="Hvordan finne riktig font"
-        articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
-      ></Article>
+      <section className="flex flex-col-reverse scale-z-105">
+        <InfoCard
+          headerText="Hvorfor finnes dette nettstedet?"
+          textContent={[
+            "I slutten av 2024 da jeg begynte i ny jobb, var første gangen jeg tok på meg UU-brillene, og etter det har de ikke blitt tatt ",
+            "Tidligere har jeg jobbet som interaksjonsdesigner med fokus på brukeropplevelser, men det var først i slutten av 2024 da jeg begynte å jobbe med universell utforming av digitale flater at jeg forstod hvor mange som blir ekskludert på grunn av nettsider som ikke er universellt utformet. Jeg har selv laget nettsider som ikke er tilgjenglige for alle. ",
+            "Dette vil jeg få en slutt på selv om jeg vet hvor vanskelig det er hvis man ikke har på seg UU-brillene, eller kanskje har feil styrke i glassene.",
+            "Derfor har jeg laget denne info-siden med artikler og guider både for å hjelpe meg selv og andre, så vi sammen kan skape en digital fremtid tilgjengelig for alle.",
+          ]}
+        />
+        <section className="flex flex-wrap w-full ">
+          <Article
+            articleHeader="Hvordan finne riktig font"
+            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
+            tagContainer={<Tag tagName="Mest lest" />}
+          ></Article>
+          <Article
+            articleHeader="Hvordan finne riktig font"
+            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
+            tagContainer={<Tag tagName="Mest lest" />}
+          ></Article>
+          <Article
+            articleHeader="Hvordan finne riktig font"
+            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
+            tagContainer={<Tag tagName="Mest lest" />}
+          ></Article>
+          <Article
+            articleHeader="Hvordan finne riktig font"
+            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
+            tagContainer={<Tag tagName="Mest lest" />}
+          ></Article>
+          <Article
+            articleHeader="Hvordan finne riktig font"
+            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
+            tagContainer={<Tag tagName="Mest lest" />}
+          ></Article>
+        </section>
+      </section>
     </section>
   );
 }

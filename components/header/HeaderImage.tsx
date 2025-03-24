@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 
 const HeaderImage = () => {
-  const pathname = usePathname(); // Now this will work!
+  const pathname = usePathname();
   console.log("Current Pathname:", pathname);
 
   const getHeaderImage = () => {

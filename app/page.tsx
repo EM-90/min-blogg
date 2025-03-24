@@ -17,6 +17,7 @@ export default function Home() {
           </Link>
         }
       />
+
       <InfoCard
         headerText="Hvorfor finnes dette nettstedet?"
         textContent={[

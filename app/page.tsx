@@ -30,33 +30,6 @@ export default function Home() {
             "Derfor har jeg laget denne info-siden med artikler og guider både for å hjelpe meg selv og andre, så vi sammen kan skape en digital fremtid tilgjengelig for alle.",
           ]}
         />
-        <section className="flex flex-wrap w-full ">
-          <Article
-            articleHeader="Hvordan finne riktig font"
-            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
-            tagContainer={<Tag tagName="Mest lest" />}
-          ></Article>
-          <Article
-            articleHeader="Hvordan finne riktig font"
-            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
-            tagContainer={<Tag tagName="Mest lest" />}
-          ></Article>
-          <Article
-            articleHeader="Hvordan finne riktig font"
-            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
-            tagContainer={<Tag tagName="Mest lest" />}
-          ></Article>
-          <Article
-            articleHeader="Hvordan finne riktig font"
-            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
-            tagContainer={<Tag tagName="Mest lest" />}
-          ></Article>
-          <Article
-            articleHeader="Hvordan finne riktig font"
-            articleText="Dette er en tekst som bare skal vises for å gi en liten smakebit på hva denne artikkelen handler om"
-            tagContainer={<Tag tagName="Mest lest" />}
-          ></Article>
-        </section>
       </section>
     </section>
   );

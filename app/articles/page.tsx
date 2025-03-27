@@ -1,5 +1,4 @@
 import { Header } from "@/components/header/Header";
-import Navbar from "@/components/Navbar";
 import React from "react";
 import { Article } from "@/components/article/Article";
 import { Tag } from "@/components/tag/Tag";

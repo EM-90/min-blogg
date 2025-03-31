@@ -1,26 +1,19 @@
-"use client"; // If using Next.js App Router
-
-import { useEffect, useState } from "react";
-import { fetchPosts } from "@/sanity/lib/queries";
+import { fetchPosts } from "../../sanity/lib/queries";
 import { Article } from "@/components/article/Article";
 import { Header } from "@/components/header/Header";
 import { Tag } from "@/components/tag/Tag";
+import { Key } from "react";
+import { PortableText } from "@portabletext/react";
 
-export default function Articles() {
-  const [posts, setPosts] = useState<any[]>([]);
+export default async function Articles() {
+  let posts = [];
 
-  useEffect(() => {
-    async function getPosts() {
-      try {
-        const data = await fetchPosts();
-        console.log("Fetched Posts:", data); // Debug log
-        setPosts(data);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      }
-    }
-    getPosts();
-  }, []);
+  try {
+    posts = await fetchPosts();
+    console.log("here it is", posts);
+  } catch (error) {
+    console.error("Kunne ikke hente artikler:", error);
+  }
 
   return (
     <section>
@@ -29,18 +22,24 @@ export default function Articles() {
         infoText="Her finner du artikler om brukeropplevelser og tilgjengelighet"
       />
 
-      <section className="flex flex-wrap w-full scale-z-100">
-        {posts.length > 0 ? (
-          posts.map((post) => (
-            <Article
-              key={post._id}
-              articleHeader={post.title}
-              articleText={post.body}
-              tagContainer={<Tag tagName="Mest lest" />}
-            />
-          ))
+      <section className="flex flex-wrap w-full scale-100">
+        {posts?.length ? (
+          posts.map(
+            (post: {
+              _id: Key | null | undefined;
+              title: string;
+              body: any;
+            }) => (
+              <Article
+                key={post._id}
+                articleHeader={post.title}
+                articleText={post.body}
+                tagContainer={<Tag tagName="Mest lest" />}
+              />
+            )
+          )
         ) : (
-          <p>Laster artikler...</p> // Show loading state
+          <p>Laster artikler...</p>
         )}
       </section>
     </section>

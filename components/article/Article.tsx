@@ -29,9 +29,9 @@ export const Article = ({
       <div className="mt-2">
         <p className="text-gray-700">{articlePreview}</p>
         <div>
-          <ArrowRight className="absolute right-2 bottom-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 " />
+          <ArrowRight className="absolute right-2 bottom-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
         </div>
-        <PortableText value={articleText} />
+        {articleText && <PortableText value={articleText} />}
       </div>
     </article>
   );

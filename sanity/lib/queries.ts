@@ -6,6 +6,7 @@ export async function fetchPosts() {
       _id,
       title,
       slug,
+      "preview": array::join(string::split((pt::text(body)), " ")[0..25], " ") + "...",
       body,
       mainImage,
       publishedAt

@@ -10,7 +10,6 @@ export default async function Articles() {
 
   try {
     posts = await fetchPosts();
-    console.log("here it is", posts);
   } catch (error) {
     console.error("Kunne ikke hente artikler:", error);
   }
@@ -28,13 +27,15 @@ export default async function Articles() {
             (post: {
               _id: Key | null | undefined;
               title: string;
-              body: any;
+              preview: string;
+              slug: { current: string };
             }) => (
               <Article
                 key={post._id}
                 articleHeader={post.title}
-                articleText={post.body}
+                articlePreview={post.preview}
                 tagContainer={<Tag tagName="Mest lest" />}
+                articleSlug={post.slug.current}
               />
             )
           )

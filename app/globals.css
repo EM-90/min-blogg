@@ -8,10 +8,26 @@ h3 {
 
 p,
 li,
-button,
-span {
+button {
   font-family: var(--text-font);
   color: black;
+}
+
+.thisArticle p {
+  margin-bottom: 1rem;
+}
+
+.thisArticle h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+.thisArticle p {
+}
+
+span {
+  font-family: var(--text-font);
 }
 
 :root {

@@ -14,7 +14,7 @@ button {
 }
 
 .thisArticle p {
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   line-height: 34px;
   font-size: 18px;
 }
@@ -22,10 +22,11 @@ button {
 .thisArticle h2 {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: bold;
-  margin: 20px 0px;
+  margin: 10px 0px;
 }
 
-.thisArticle p {
+.thisArticle h1 {
+  margin: 10px 0px;
 }
 
 span {

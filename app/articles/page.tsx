@@ -21,7 +21,7 @@ export default async function Articles() {
         infoText="Her finner du artikler om brukeropplevelser og tilgjengelighet"
       />
 
-      <section className="flex flex-wrap w-full scale-100">
+      <section className="flex flex-wrap w-full scale-100 gap-16">
         {posts?.length ? (
           posts.map(
             (post: {

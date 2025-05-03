@@ -4,7 +4,7 @@ import { Playfair_Display, Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import HeaderImage from "@/components/header/HeaderImage";
 
-const headerFont = Playfair_Display({
+const headerFont = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "800"],
   variable: "--header-font",

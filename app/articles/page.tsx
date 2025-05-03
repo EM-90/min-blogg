@@ -3,7 +3,6 @@ import { Article } from "@/components/article/Article";
 import { Header } from "@/components/header/Header";
 import { Tag } from "@/components/tag/Tag";
 import { Key } from "react";
-import { PortableText } from "@portabletext/react";
 
 export default async function Articles() {
   let posts = [];

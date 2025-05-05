@@ -26,6 +26,7 @@ export default async function Articles() {
             (post: {
               _id: Key | null | undefined;
               title: string;
+              categories: any[] | null;
               preview: string;
               slug: { current: string };
             }) => (
@@ -33,7 +34,16 @@ export default async function Articles() {
                 key={post._id}
                 articleHeader={post.title}
                 articlePreview={post.preview}
-                tagContainer={<Tag tagName="Mest lest" />}
+                tagContainer={
+                  Array.isArray(post.categories) &&
+                  post.categories.length > 0 ? (
+                    post.categories.map((category) => (
+                      <Tag key={category._id} tag={category} />
+                    ))
+                  ) : (
+                    <span>No category</span>
+                  )
+                }
                 articleSlug={post.slug.current}
               />
             )

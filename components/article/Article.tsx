@@ -25,10 +25,11 @@ export const Article = ({
         style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.2rem)" }}
         className="group max-w-96 pr-2 cursor-pointer hover:rounded-lg relative transition-all duration-200"
       >
+        <div className="py-4">{tagContainer}</div>
         <h2 className="text-xl sm:text-2xl font-semibold mb-2 group-hover:underline">
           {articleHeader}
         </h2>
-        <div>{tagContainer}</div>
+
         <div className="mt-3">
           <p className="text-gray-700">{articlePreview}</p>
           <div>

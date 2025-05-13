@@ -18,6 +18,8 @@ const HeaderImage = () => {
         return "/header-guides.svg";
       case "/about":
         return "/header-about.svg";
+      default:
+        return "/header-articles.svg";
     }
   };
 

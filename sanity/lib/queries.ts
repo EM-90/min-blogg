@@ -35,6 +35,11 @@ export async function fetchRecentPosts(limit = 3) {
         slug,
         "preview": array::join(string::split((pt::text(body)), " ")[0..20], " ") + "...",
         body,
+        categories[]->{
+        _id,
+        title,
+        slug
+      },
         mainImage,
         publishedAt
       } | order(publishedAt desc) [0...$limit]

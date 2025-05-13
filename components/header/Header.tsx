@@ -25,7 +25,7 @@ export const Header = ({ headerText, infoText, btn }: HeaderProps) => {
       </section>
       <p
         style={{ fontSize: "clamp(1.25rem, 3vw, 2rem)" }}
-        className=" lg:w-1/2 text-xl mb-4  leading-snug"
+        className="sub-title lg:w-1/2 text-xl mb-4  leading-snug"
       >
         {infoText}
       </p>

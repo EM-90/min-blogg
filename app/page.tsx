@@ -1,7 +1,7 @@
 import { Article } from "@/components/article/Article";
 import { Header } from "@/components/header/Header";
-import { InfoCard } from "@/components/info/InfoCard";
 import { fetchRecentPosts } from "@/sanity/lib/queries";
+import { Tag } from "@/components/tag/Tag";
 import Link from "next/link";
 import { Key } from "react";
 
@@ -26,6 +26,7 @@ export default async function Home() {
           (post: {
             _id: Key | null | undefined;
             title: string;
+            categories: any[] | null;
             slug: { current: string };
             preview: string;
           }) => (
@@ -34,6 +35,17 @@ export default async function Home() {
               articleHeader={post.title}
               articleSlug={post.slug.current}
               articlePreview={post.preview}
+              tagContainer={
+                Array.isArray(post.categories) && post.categories.length > 0 ? (
+                  post.categories.map((category) => (
+                    <Tag key={category._id} tag={category} />
+                  ))
+                ) : (
+                  <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
+                    No category
+                  </span>
+                )
+              }
             />
           )
         )}
@@ -41,3 +53,5 @@ export default async function Home() {
     </section>
   );
 }
+
+//Keep working on the tags for them to display on this page

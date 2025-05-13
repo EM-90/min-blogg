@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${headerFont.variable} ${textFont.variable}`}>
-      <body style={{ backgroundColor: mainBgColor }}>
+      <body>
         <Navbar />
         <HeaderImage />
         <main className="sm:w-2/3 mx-auto pl-6 pr-6 sm:pl-2 sm:pr-2 pt-10">

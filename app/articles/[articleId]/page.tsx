@@ -16,7 +16,7 @@ export default async function ArticleID({ params }: ArticleIdProps) {
   }
 
   return (
-    <section className="thisArticle text-balance flex flex-col justify-center max-w-[800px] mx-auto">
+    <section className="thisArticle text-balance flex flex-col justify-center max-w-[800px] mx-auto scale-z-100">
       <h1 className="  text-2xl md:text-4xl xl:text-5xl font-bold">
         {post.title}
       </h1>

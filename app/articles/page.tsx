@@ -41,7 +41,9 @@ export default async function Articles() {
                       <Tag key={category._id} tag={category} />
                     ))
                   ) : (
-                    <span>No category</span>
+                    <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
+                      No category
+                    </span>
                   )
                 }
                 articleSlug={post.slug.current}

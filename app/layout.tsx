@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${headerFont.variable} ${textFont.variable}`}>
+    <html lang="no" className={`${headerFont.variable} ${textFont.variable}`}>
       <body>
         <Navbar />
         <HeaderImage />

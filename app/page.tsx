@@ -14,14 +14,14 @@ export default async function Home() {
         headerText="Alle skal ha tilgang"
         infoText="Artikler, råd, veiledere og eksprimentering rundt universell utforming av teknologi og hvordan det kan skape en bedre brukeropplevelse for alle"
         btn={
-          <Link href="/kontakt">
-            <button className="p-4 text-2xl rounded-md border-4">
-              Kontakt her
+          <Link href="/articles">
+            <button className="p-4 text-2xl cursor-pointer outline-2 text-black hover:text-white rounded-md hover:bg-black">
+              Finn flere artikler
             </button>
           </Link>
         }
       />
-      <section className="flex gap-20">
+      <section className="flex flex-wrap gap-20">
         {NewPosts.map(
           (post: {
             _id: Key | null | undefined;
@@ -42,7 +42,7 @@ export default async function Home() {
                   ))
                 ) : (
                   <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
-                    No category
+                    innlegg uten kategori
                   </span>
                 )
               }

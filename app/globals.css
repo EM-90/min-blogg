@@ -7,8 +7,7 @@ h3 {
 }
 
 p,
-li,
-button {
+li {
   font-family: var(--text-font);
   color: black;
 }

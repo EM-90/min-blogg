@@ -1,6 +1,7 @@
 import { client } from "./client";
+import { Post } from "@/types/post";
 
-export async function fetchPosts() {
+export async function fetchPosts(): Promise<Post[]> {
   return client.fetch(`
     *[_type == "post" && !(_id in path("drafts.**"))]{
       _id,
@@ -13,13 +14,13 @@ export async function fetchPosts() {
         title,
         slug
       },
-      mainImage,
+      "mainImage": mainImage.asset->url,
       publishedAt
     } | order(publishedAt desc)
   `);
 }
 
-export async function fetchPostBySlug(slug: string) {
+export async function fetchPostBySlug(slug: string): Promise<Post | null> {
   const query = `*[_type == "post" && slug.current == $slug][0]`;
   return await client.fetch(query, { slug });
 }
@@ -40,7 +41,7 @@ export async function fetchRecentPosts(limit = 3) {
         title,
         slug
       },
-        mainImage,
+        "mainImage": mainImage.asset->url,
         publishedAt
       } | order(publishedAt desc) [0...$limit]
     `,

@@ -8,7 +8,7 @@ interface ArticleProps {
   articlePreview?: string;
   articleText?: any;
   tagContainer?: ReactNode;
-  imageUrl?: string;
+  mainImage?: string;
   articleSlug: string;
 }
 
@@ -18,6 +18,7 @@ export const Article = ({
   articlePreview,
   tagContainer,
   articleSlug,
+  mainImage,
 }: ArticleProps) => {
   return (
     <Link href={`/articles/${articleSlug}`}>
@@ -25,6 +26,15 @@ export const Article = ({
         style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.2rem)" }}
         className="group max-w-96 pr-2 cursor-pointer hover:rounded-lg relative transition-all duration-200"
       >
+        {mainImage && (
+          <figure className="mb-4">
+            <img
+              src={mainImage}
+              alt={articleHeader}
+              className="rounded-md border-2 border-gray-200 object-cover w-full h-48"
+            />
+          </figure>
+        )}
         <div className="pb-4">{tagContainer}</div>
         <h2 className="text-xl sm:text-2xl font-semibold mb-2 group-hover:underline">
           {articleHeader}

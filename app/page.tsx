@@ -3,10 +3,11 @@ import { Header } from "@/components/header/Header";
 import { fetchRecentPosts } from "@/sanity/lib/queries";
 import { Tag } from "@/components/tag/Tag";
 import Link from "next/link";
-import { Key } from "react";
+import { Post } from "@/types/post";
 
 export default async function Home() {
-  const NewPosts = await fetchRecentPosts();
+  let newPosts: Post[] = [];
+  newPosts = await fetchRecentPosts();
 
   return (
     <section>
@@ -22,33 +23,26 @@ export default async function Home() {
         }
       />
       <section className="flex flex-wrap gap-20">
-        {NewPosts.map(
-          (post: {
-            _id: Key | null | undefined;
-            title: string;
-            categories: any[] | null;
-            slug: { current: string };
-            preview: string;
-          }) => (
-            <Article
-              key={post._id}
-              articleHeader={post.title}
-              articleSlug={post.slug.current}
-              articlePreview={post.preview}
-              tagContainer={
-                Array.isArray(post.categories) && post.categories.length > 0 ? (
-                  post.categories.map((category) => (
-                    <Tag key={category._id} tag={category} />
-                  ))
-                ) : (
-                  <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
-                    innlegg uten kategori
-                  </span>
-                )
-              }
-            />
-          )
-        )}
+        {newPosts.map((post) => (
+          <Article
+            key={post._id}
+            articleHeader={post.title}
+            articleSlug={post.slug.current}
+            articlePreview={post.preview}
+            mainImage={post.mainImage}
+            tagContainer={
+              Array.isArray(post.categories) && post.categories.length > 0 ? (
+                post.categories.map((category) => (
+                  <Tag key={category._id} tag={category} />
+                ))
+              ) : (
+                <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
+                  innlegg uten kategori
+                </span>
+              )
+            }
+          />
+        ))}
       </section>
     </section>
   );

@@ -48,11 +48,11 @@ span {
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --headerColor-hjem: #436fff;
-  --headerColor-artikler: #43c0ff;
-  --headerColor-kontakt: #ffcd43;
-  --headerColor-guider: #ff6f43;
-  --headerColor-om: #45cd4a;
+  --headerColor-hjem: #dce4ff;
+  --headerColor-artikler: #e4f6ff;
+  --headerColor-kontakt: #fff4d6;
+  --headerColor-guider: #ffe9e2;
+  --headerColor-om: #dffde0;
   --main-bg-color: #fffcf4;
   --info-card-bg: #fff5d6;
 }

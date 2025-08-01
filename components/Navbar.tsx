@@ -11,10 +11,10 @@ function Navbar() {
 
   let headerColor = "var(--headerColor-hjem)";
 
-  /*if (pathname === "/articles") headerColor = "var(--headerColor-artikler)";
+  if (pathname === "/articles") headerColor = "var(--headerColor-artikler)";
   else if (pathname === "/contact") headerColor = "var(--headerColor-kontakt)";
   else if (pathname === "/guides") headerColor = "var(--headerColor-guider)";
-  else if (pathname === "/about") headerColor = "var(--headerColor-om)"; */
+  else if (pathname === "/about") headerColor = "var(--headerColor-om)";
   // her kan jeg legge til flere variabler for andre farger på andre sider
 
   return (
@@ -28,7 +28,7 @@ function Navbar() {
           className="text-black lg:hidden z-20"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <XIcon size={28} color="#ffffff" /> : <Menu size={28} />}
+          {isOpen ? <XIcon size={28} color="#000000" /> : <Menu size={28} />}
         </button>
         <ul className="hidden lg:flex gap-12 text-lg">
           <li className="group relative">

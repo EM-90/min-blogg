@@ -22,13 +22,21 @@ function Navbar() {
       //style={{ backgroundColor: headerColor }}
       className="flex justify-center relative z-20"
     >
-      <section className="flex justify-between items-center p-6 w-full lg:w-2/3">
-        <div className="font-bold text-lg">UU-Laben</div>
+      <section className="flex justify-between items-center p-6 w-full lg:w-2/3  ">
+        <img
+          className="inklusign-logo"
+          src="/inklusign-human.svg"
+          alt="logo og hjemmesidelenke"
+        />
         <button
           className="text-black lg:hidden z-20"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <XIcon size={28} color="#000000" /> : <Menu size={28} />}
+          {isOpen ? (
+            <XIcon size={28} color="#000000" />
+          ) : (
+            <Menu size={28} aria-label="Mobilmeny" />
+          )}
         </button>
         <ul className="hidden lg:flex gap-12 text-lg">
           <li className="group relative">

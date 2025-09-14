@@ -24,29 +24,27 @@ export const Article = ({
     <Link href={`/articles/${articleSlug}`}>
       <article
         style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.2rem)" }}
-        className="group max-w-96 pr-2 cursor-pointer hover:rounded-lg relative transition-all duration-200"
+        className="group max-w-96 cursor-pointer rounded-lg  border-2 hover:border-yellow-400 hover:border-4 "
       >
         {mainImage && (
-          <figure className="mb-4">
+          <figure className="mb-4 border-b-2">
             <img
               src={mainImage}
               alt={articleHeader}
-              className="rounded-md border-2 border-gray-200 object-cover w-full h-48"
+              className="rounded-md object-cover w-full h-48"
             />
           </figure>
         )}
-        <div className="pb-4">{tagContainer}</div>
-        <h2 className="text-xl sm:text-2xl font-semibold mb-2 group-hover:underline">
-          {articleHeader}
-        </h2>
+        <section className="container px-6 pb-6">
+          <div className="pb-1">{tagContainer}</div>
+          <h3 className="text-xl sm:text-2xl font-medium mb-2 group-hover:underline">
+            {articleHeader}
+          </h3>
 
-        <div className="mt-3">
-          <p className="text-gray-700">{articlePreview}</p>
-          <div>
-            <ArrowRight className="absolute right-0 bottom-0 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
+          <div className="mt-3">
+            {articleText && <PortableText value={articleText} />}
           </div>
-          {articleText && <PortableText value={articleText} />}
-        </div>
+        </section>
       </article>
     </Link>
   );

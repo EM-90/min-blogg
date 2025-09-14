@@ -6,10 +6,18 @@ h3 {
   font-family: var(--header-font), sans-serif;
 }
 
+.inklusign-logo {
+  width: 180px;
+}
+
 p,
 li {
   font-family: var(--text-font);
   color: black;
+}
+
+.cta-btn {
+  font-family: var(--text-font);
 }
 
 .thisArticle p {
@@ -37,7 +45,6 @@ li {
 }
 
 .thisArticle h1 {
-  font-weight: 600;
   margin-top: 2rem;
 }
 

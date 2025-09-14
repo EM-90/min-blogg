@@ -4,7 +4,7 @@ import { fetchPosts } from "@/sanity/lib/queries";
 import GuiderLinkComp from "@/components/guider-link-comp";
 
 async function Guides() {
-  let postTitle = [];
+  let postTitle: { title: string }[] = [];
 
   try {
     postTitle = await fetchPosts();

@@ -9,24 +9,24 @@ const HeaderImage = () => {
   const getHeaderImage = () => {
     switch (pathname) {
       case "/":
-        return "/header-home.svg";
+        return "/header-bg-home.svg";
       case "/articles":
-        return "/header-articles.svg";
+        return "/header-inklusign-artikler.svg";
       case "/contact":
-        return "/header-contact.svg";
+        return "/header-inklusign-kontakt.svg";
       case "/guides":
-        return "/header-guides.svg";
+        return "/header-inklusign-annet.svg";
       case "/about":
-        return "/header-about.svg";
+        return "/header-inklusign-om.svg";
       default:
-        return "/header-articles.svg";
+        return "/header-inklusign-artikler.svg";
     }
   };
 
   return (
     <img
       src={getHeaderImage()}
-      alt="Header Image"
+      alt=""
       className="w-full absolute top-0 bg-cover"
     />
   );

@@ -7,7 +7,7 @@ function About() {
     <section>
       <Header
         headerText="Hva er UU-Laben?"
-        infoText="Her får du litt informasjon om hvordan du kan bruke dette nettstedet, og du får også vite litt om meg"
+        infoText="Her får du vite litt om meg, Inklusign og hvorfor nettstedet ble laget"
       />
       <section className="flex flex-col-reverse scale-z-105">
         <InfoCard

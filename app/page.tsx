@@ -12,37 +12,41 @@ export default async function Home() {
   return (
     <section>
       <Header
-        headerText="Alle skal ha tilgang"
-        infoText="Artikler, råd, veiledere og eksprimentering rundt universell utforming av teknologi og hvordan det kan skape en bedre brukeropplevelse for alle"
+        headerText="Design for alle er inkluderende design"
+        infoText="Artikler og skriv om hvordan tilgjengelighet kan gjøre siden din bedre"
         btn={
           <Link href="/articles">
-            <button className="p-4 text-2xl cursor-pointer outline-2 text-black hover:text-white rounded-md hover:bg-black">
+            <button className=" cta-btn p-4 text-2xl font-light cursor-pointer text-white rounded-md bg-black border-none">
               Finn flere artikler
             </button>
           </Link>
         }
       />
-      <section className="flex flex-wrap gap-20">
-        {newPosts.map((post) => (
-          <Article
-            key={post._id}
-            articleHeader={post.title}
-            articleSlug={post.slug.current}
-            articlePreview={post.preview}
-            mainImage={post.mainImage}
-            tagContainer={
-              Array.isArray(post.categories) && post.categories.length > 0 ? (
-                post.categories.map((category) => (
-                  <Tag key={category._id} tag={category} />
-                ))
-              ) : (
-                <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
-                  innlegg uten kategori
-                </span>
-              )
-            }
-          />
-        ))}
+      <section>
+        <h2 className=" scale-z-100 text-3xl xl:text-4xl mb-9">
+          Nyeste artikler
+        </h2>
+        <section className="flex flex-wrap gap-10">
+          {newPosts.map((post) => (
+            <Article
+              key={post._id}
+              articleHeader={post.title}
+              articleSlug={post.slug.current}
+              mainImage={post.mainImage}
+              tagContainer={
+                Array.isArray(post.categories) && post.categories.length > 0 ? (
+                  post.categories.map((category) => (
+                    <Tag key={category._id} tag={category} />
+                  ))
+                ) : (
+                  <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
+                    innlegg uten kategori
+                  </span>
+                )
+              }
+            />
+          ))}
+        </section>
       </section>
     </section>
   );

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Playfair_Display, Poppins, Lexend } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import HeaderImage from "@/components/header/HeaderImage";
+import FocusRing from "@/components/helpers/tab-nav";
 
 const headerFont = Lexend({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="no" className={`${headerFont.variable} ${textFont.variable}`}>
       <body style={{ backgroundColor: "#fffcf4" }}>
         <Navbar />
+        <FocusRing />
         <HeaderImage />
         <main className="sm:w-2/3 mx-auto pl-6 pr-6 sm:pl-2 sm:pr-2 pt-10">
           {children}

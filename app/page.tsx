@@ -15,10 +15,11 @@ export default async function Home() {
         headerText="Design for alle er inkluderende design"
         infoText="Artikler og skriv om hvordan tilgjengelighet kan gjøre siden din bedre"
         btn={
-          <Link href="/articles">
-            <button className=" cta-btn p-4 text-2xl font-light cursor-pointer text-white rounded-md bg-black border-none">
-              Finn flere artikler
-            </button>
+          <Link
+            href="/articles"
+            className=" cta-btn p-4 text-2xl font-light cursor-pointer text-white rounded-md bg-black border-none"
+          >
+            Finn flere artikler
           </Link>
         }
       />

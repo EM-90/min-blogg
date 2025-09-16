@@ -74,7 +74,7 @@ function Navbar() {
         {isOpen && (
           <ul
             style={{ backgroundColor: headerColor }}
-            className="lg:hidden flex flex-col pt-20 pl-10 text-3xl w-full  space-y-15 text-white  h-screen absolute top-18 right-0"
+            className="lg:hidden flex flex-col pt-20 pl-10 text-3xl w-full  space-y-15 text-white  h-screen absolute top-16 right-0"
           >
             <li className="group relative w-fit">
               <a href="/" className="hover:text-black">

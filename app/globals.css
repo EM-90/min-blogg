@@ -6,22 +6,60 @@ h3 {
   font-family: var(--header-font), sans-serif;
 }
 
+.inklusign-logo {
+  width: 180px;
+}
+
 p,
-li,
-button,
-span {
+li {
   font-family: var(--text-font);
   color: black;
+}
+
+.cta-btn {
+  font-family: var(--text-font);
+}
+
+.thisArticle p {
+  margin-bottom: 2.2rem;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.sub-title {
+  font-family: var(--text-font);
+}
+
+.thisArticle h2 {
+  font-size: clamp(1.5rem, 1.5vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 2em;
+}
+
+.thisArticle h3 {
+  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 1em;
+}
+
+.thisArticle h1 {
+  margin-top: 2rem;
+}
+
+span {
+  font-family: var(--text-font);
 }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --headerColor-hjem: #436fff;
-  --headerColor-artikler: #43c0ff;
-  --headerColor-kontakt: #ffcd43;
-  --headerColor-guider: #ff6f43;
-  --headerColor-om: #45cd4a;
+  --headerColor-hjem: #dce4ff;
+  --headerColor-artikler: #e4f6ff;
+  --headerColor-kontakt: #fff4d6;
+  --headerColor-guider: #ffe9e2;
+  --headerColor-om: #dffde0;
   --main-bg-color: #fffcf4;
   --info-card-bg: #fff5d6;
 }

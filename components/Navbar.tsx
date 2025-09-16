@@ -19,16 +19,24 @@ function Navbar() {
 
   return (
     <nav
-      style={{ backgroundColor: headerColor }}
+      //style={{ backgroundColor: headerColor }}
       className="flex justify-center relative z-20"
     >
-      <section className="flex justify-between p-6 w-full lg:w-2/3">
-        <div>UU-Laben</div>
+      <section className="flex justify-between items-center p-6 w-full lg:w-2/3  ">
+        <img
+          className="inklusign-logo"
+          src="/inklusign-human.svg"
+          alt="logo og hjemmesidelenke"
+        />
         <button
           className="text-black lg:hidden z-20"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <XIcon size={28} color="#ffffff" /> : <Menu size={28} />}
+          {isOpen ? (
+            <XIcon size={28} color="#000000" />
+          ) : (
+            <Menu size={28} aria-label="Mobilmeny" />
+          )}
         </button>
         <ul className="hidden lg:flex gap-12 text-lg">
           <li className="group relative">
@@ -66,7 +74,7 @@ function Navbar() {
         {isOpen && (
           <ul
             style={{ backgroundColor: headerColor }}
-            className="lg:hidden flex flex-col pt-20 pl-10 text-3xl w-full  space-y-15 text-white  h-screen absolute top-18 right-0"
+            className="lg:hidden flex flex-col pt-20 pl-10 text-3xl w-full  space-y-15 text-white  h-screen absolute top-16 right-0"
           >
             <li className="group relative w-fit">
               <a href="/" className="hover:text-black">

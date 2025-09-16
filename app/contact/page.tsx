@@ -4,8 +4,8 @@ import React from "react";
 function Contact() {
   return (
     <Header
-      headerText="Har du forsalg til måndens tema?"
-      infoText="Send inn forslaget ditt i kontaktskjemaet nedenfor. Hvis du er heldig blir temaet tatt opp eller lagt i temabanken."
+      headerText="Kontakt meg her"
+      infoText="Forslag til tema innen tilgjengelighet, digitale flater som burde vært bedre utformet, eller annet? klikk på lenken nedenfor"
     />
   );
 }

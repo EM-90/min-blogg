@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Playfair_Display, Poppins } from "next/font/google";
+import { Playfair_Display, Poppins, Lexend } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import HeaderImage from "@/components/header/HeaderImage";
 
-const headerFont = Playfair_Display({
+const headerFont = Lexend({
   subsets: ["latin"],
   weight: ["400", "600", "800"],
   variable: "--header-font",
 });
 
-const textFont = Poppins({
+const textFont = Lexend({
   subsets: ["latin"],
   weight: ["200", "300", "400"],
   variable: "--text-font",
@@ -20,8 +20,7 @@ const mainBgColor = "var(--main-bg-color)";
 
 export const metadata: Metadata = {
   title: "UU-laben",
-  description:
-    "Artiler, råd og veiledere for tilgjengelighet og universell utforming",
+  description: "Artiler, råd, tilgjengelighet og universelt utformet design",
 };
 
 export default function RootLayout({
@@ -30,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${headerFont.variable} ${textFont.variable}`}>
-      <body style={{ backgroundColor: mainBgColor }}>
+    <html lang="no" className={`${headerFont.variable} ${textFont.variable}`}>
+      <body style={{ backgroundColor: "#fffcf4" }}>
         <Navbar />
         <HeaderImage />
         <main className="sm:w-2/3 mx-auto pl-6 pr-6 sm:pl-2 sm:pr-2 pt-10">

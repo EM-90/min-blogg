@@ -1,36 +1,55 @@
-import { Header } from "@/components/header/Header";
-import { InfoCard } from "@/components/info/InfoCard";
-import Link from "next/link";
 import { Article } from "@/components/article/Article";
+import { Header } from "@/components/header/Header";
+import { fetchRecentPosts } from "@/sanity/lib/queries";
 import { Tag } from "@/components/tag/Tag";
-import HeaderImage from "@/components/header/HeaderImage";
+import Link from "next/link";
+import { Post } from "@/types/post";
 
-export default function Home() {
+export default async function Home() {
+  let newPosts: Post[] = [];
+  newPosts = await fetchRecentPosts();
+
   return (
     <section>
       <Header
-        headerText="Alle skal ha tilgang"
-        infoText="Artikler, råd, veiledere og eksprimentering rundt universell utforming av teknologi og hvordan det kan skape en bedre brukeropplevelse for alle"
+        headerText="Design for alle er inkluderende design"
+        infoText="Artikler og skriv om hvordan tilgjengelighet kan gjøre siden din bedre"
         btn={
-          <Link href="/kontakt">
-            <button className="p-4 text-2xl rounded-md border-4">
-              Kontakt her
+          <Link href="/articles">
+            <button className=" cta-btn p-4 text-2xl font-light cursor-pointer text-white rounded-md bg-black border-none">
+              Finn flere artikler
             </button>
           </Link>
         }
       />
-
-      <section className="flex flex-col-reverse scale-z-105">
-        <InfoCard
-          headerText="Hvorfor finnes dette nettstedet?"
-          textContent={[
-            "I slutten av 2024 da jeg begynte i ny jobb, var første gangen jeg tok på meg UU-brillene, og etter det har de ikke blitt tatt ",
-            "Tidligere har jeg jobbet som interaksjonsdesigner med fokus på brukeropplevelser, men det var først i slutten av 2024 da jeg begynte å jobbe med universell utforming av digitale flater at jeg forstod hvor mange som blir ekskludert på grunn av nettsider som ikke er universellt utformet. Jeg har selv laget nettsider som ikke er tilgjenglige for alle. ",
-            "Dette vil jeg få en slutt på selv om jeg vet hvor vanskelig det er hvis man ikke har på seg UU-brillene, eller kanskje har feil styrke i glassene.",
-            "Derfor har jeg laget denne info-siden med artikler og guider både for å hjelpe meg selv og andre, så vi sammen kan skape en digital fremtid tilgjengelig for alle.",
-          ]}
-        />
+      <section>
+        <h2 className=" scale-z-100 text-3xl xl:text-4xl mb-9">
+          Nyeste artikler
+        </h2>
+        <section className="flex flex-wrap gap-10">
+          {newPosts.map((post) => (
+            <Article
+              key={post._id}
+              articleHeader={post.title}
+              articleSlug={post.slug.current}
+              mainImage={post.mainImage}
+              tagContainer={
+                Array.isArray(post.categories) && post.categories.length > 0 ? (
+                  post.categories.map((category) => (
+                    <Tag key={category._id} tag={category} />
+                  ))
+                ) : (
+                  <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
+                    innlegg uten kategori
+                  </span>
+                )
+              }
+            />
+          ))}
+        </section>
       </section>
     </section>
   );
 }
+
+//Keep working on the tags for them to display on this page

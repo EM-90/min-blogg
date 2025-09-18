@@ -53,7 +53,7 @@ span {
 }
 
 :where(a, button, input, textarea, select, [tabindex]):focus {
-  outline: none; /* or your custom outline with 3:1 contrast */
+  outline: none;
 }
 
 :root {

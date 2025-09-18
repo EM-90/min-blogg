@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import { PortableText } from "next-sanity";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface ArticleProps {
@@ -15,7 +14,6 @@ interface ArticleProps {
 export const Article = ({
   articleHeader,
   articleText,
-  articlePreview,
   tagContainer,
   articleSlug,
   mainImage,
@@ -24,7 +22,7 @@ export const Article = ({
     <Link href={`/articles/${articleSlug}`}>
       <article
         style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.2rem)" }}
-        className="group max-w-96 cursor-pointer rounded-lg  border-2 hover:border-yellow-400 hover:border-4 "
+        className="group max-w-96 cursor-pointer rounded-lg  border-2 hover:border-blue-900 hover:border-4 "
       >
         {mainImage && (
           <figure className="mb-4 border-b-2">

@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { PortableText } from "next-sanity";
 import Link from "next/link";
 
+type HeadingTag = "h2" | "h3";
+
 interface ArticleProps {
   articleHeader: string;
   articlePreview?: string;
@@ -9,6 +11,7 @@ interface ArticleProps {
   tagContainer?: ReactNode;
   mainImage?: string;
   articleSlug: string;
+  as?: HeadingTag;
 }
 
 export const Article = ({
@@ -17,7 +20,10 @@ export const Article = ({
   tagContainer,
   articleSlug,
   mainImage,
+  as = "h3",
 }: ArticleProps) => {
+  const Heading = as;
+
   return (
     <Link href={`/articles/${articleSlug}`}>
       <article
@@ -35,9 +41,9 @@ export const Article = ({
         )}
         <section className="container px-6 pb-6">
           <div className="pb-1">{tagContainer}</div>
-          <h3 className="text-xl sm:text-2xl font-medium mb-2 group-hover:underline">
+          <Heading className="text-xl sm:text-2xl font-medium mb-2 group-hover:underline">
             {articleHeader}
-          </h3>
+          </Heading>
 
           <div className="mt-3">
             {articleText && <PortableText value={articleText} />}

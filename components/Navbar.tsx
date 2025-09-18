@@ -12,21 +12,22 @@ function Navbar() {
   let headerColor = "var(--headerColor-hjem)";
 
   if (pathname === "/articles") headerColor = "var(--headerColor-artikler)";
-  else if (pathname === "/contact") headerColor = "var(--headerColor-kontakt)";
+  else if (pathname === "/kontakt") headerColor = "var(--headerColor-kontakt)";
   else if (pathname === "/guides") headerColor = "var(--headerColor-guider)";
-  else if (pathname === "/about") headerColor = "var(--headerColor-om)";
+  else if (pathname === "/om") headerColor = "var(--headerColor-om)";
+
   // her kan jeg legge til flere variabler for andre farger på andre sider
 
   return (
     <nav
-      //style={{ backgroundColor: headerColor }}
-      className="flex justify-center relative z-20"
+      style={{ backgroundColor: headerColor }}
+      className=" flex justify-center relative z-20"
     >
       <section className="flex justify-between items-center p-6 w-full lg:w-2/3  ">
         <img
           className="inklusign-logo"
           src="/inklusign-human.svg"
-          alt="logo og hjemmesidelenke"
+          alt="Inklusign logo"
         />
         <button
           className="text-black lg:hidden z-20"
@@ -38,7 +39,7 @@ function Navbar() {
             <Menu size={28} aria-label="Mobilmeny" />
           )}
         </button>
-        <ul className="hidden lg:flex gap-12 text-lg">
+        <ul className="hidden lg:flex gap-12 text-lg ml-10">
           <li className="group relative">
             <a href="/" className="hover:text-black">
               Hjem
@@ -46,13 +47,13 @@ function Navbar() {
             </a>
           </li>
           <li className="group relative">
-            <a href="/contact" className="hover:text-black">
+            <a href="/kontakt" className="hover:text-black">
               Kontakt
               <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
             </a>
           </li>
           <li className="group relative">
-            <a href="/about" className="hover:text-black">
+            <a href="/om" className="hover:text-black">
               Om
               <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
             </a>
@@ -83,13 +84,13 @@ function Navbar() {
               </a>
             </li>
             <li className="group relative w-fit">
-              <a href="/contact" className="hover:text-black">
+              <a href="/kontakt" className="hover:text-black">
                 Kontakt
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </a>
             </li>
             <li className="group relative w-fit">
-              <a href="/about" className="hover:text-black">
+              <a href="/om" className="hover:text-black">
                 Om
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </a>

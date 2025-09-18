@@ -12,11 +12,11 @@ const HeaderImage = () => {
         return "/header-bg-home.svg";
       case "/articles":
         return "/header-inklusign-artikler.svg";
-      case "/contact":
+      case "/kontakt":
         return "/header-inklusign-kontakt.svg";
       case "/guides":
         return "/header-inklusign-annet.svg";
-      case "/about":
+      case "/om":
         return "/header-inklusign-om.svg";
       default:
         return "/header-inklusign-artikler.svg";
@@ -27,7 +27,7 @@ const HeaderImage = () => {
     <img
       src={getHeaderImage()}
       alt=""
-      className="w-full absolute top-0 bg-cover"
+      className="w-full absolute top-0 bg-cover hidden md:block"
     />
   );
 };

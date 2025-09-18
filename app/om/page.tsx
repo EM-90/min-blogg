@@ -6,7 +6,7 @@ function About() {
   return (
     <section>
       <Header
-        headerText="Hva er UU-Laben?"
+        headerText="Hva er Inklusign?"
         infoText="Her får du vite litt om meg, Inklusign og hvorfor nettstedet ble laget"
       />
       <section className="flex flex-col-reverse scale-z-105">

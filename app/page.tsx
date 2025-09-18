@@ -4,6 +4,7 @@ import { fetchRecentPosts } from "@/sanity/lib/queries";
 import { Tag } from "@/components/tag/Tag";
 import Link from "next/link";
 import { Post } from "@/types/post";
+import { ArrowRightIcon } from "lucide-react";
 
 export default async function Home() {
   let newPosts: Post[] = [];
@@ -17,9 +18,10 @@ export default async function Home() {
         btn={
           <Link
             href="/articles"
-            className=" cta-btn p-4 text-2xl font-light cursor-pointer text-white rounded-md bg-black border-none"
+            className=" cta-btn p-4 text-xl md:text-2xl font-light cursor-pointer text-white rounded-lg bg-slate-800 hover:bg-black border-none flex-row inline-flex gap-2 items-center"
           >
             Finn flere artikler
+            <ArrowRightIcon />
           </Link>
         }
       />

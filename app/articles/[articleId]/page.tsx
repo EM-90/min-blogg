@@ -35,10 +35,10 @@ export default async function ArticleID({ params }: ArticleIdProps) {
 
   return (
     <section className="thisArticle text-balance flex flex-col justify-center max-w-[800px] mx-auto scale-z-100">
-      <h1 className="text-2xl md:text-4xl xl:text-5xl font-medium">
+      <h1 className="text-3xl md:text-5xl xl:text-6xl font-medium">
         {post.title}
       </h1>
-      <div className="mt-4">
+      <div className="mt-4 text-[clamp(1rem,2.5vw,1.3rem)]">
         <PortableText value={post.body} components={components} />
       </div>
     </section>

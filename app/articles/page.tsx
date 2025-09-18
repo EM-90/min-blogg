@@ -26,6 +26,7 @@ export default async function Articles() {
             <Article
               key={post._id}
               articleHeader={post.title}
+              as="h2"
               articlePreview={post.preview}
               mainImage={post.mainImage}
               tagContainer={

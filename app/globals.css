@@ -6,10 +6,6 @@ h3 {
   font-family: var(--header-font), sans-serif;
 }
 
-.inklusign-logo {
-  width: 180px;
-}
-
 p,
 li {
   font-family: var(--text-font);

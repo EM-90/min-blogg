@@ -28,7 +28,7 @@ export const Article = ({
     <Link href={`/articles/${articleSlug}`}>
       <article
         style={{ fontSize: "clamp(0.9rem, 2.5vw, 1.2rem)" }}
-        className="group max-w-96 cursor-pointer rounded-lg  border-2 hover:border-blue-900 hover:border-4 "
+        className="group max-w-96 cursor-pointer rounded-lg  outline-2 hover:outline-blue-900 hover:outline-7 "
       >
         {mainImage && (
           <figure className="mb-4 border-b-2">

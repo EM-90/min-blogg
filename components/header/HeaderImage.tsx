@@ -14,7 +14,7 @@ const HeaderImage = () => {
         return "/header-inklusign-artikler.svg";
       case "/kontakt":
         return "/header-inklusign-kontakt.svg";
-      case "/guides":
+      case "/annet":
         return "/header-inklusign-annet.svg";
       case "/om":
         return "/header-inklusign-om.svg";

@@ -13,7 +13,7 @@ function Navbar() {
 
   if (pathname === "/articles") headerColor = "var(--headerColor-artikler)";
   else if (pathname === "/kontakt") headerColor = "var(--headerColor-kontakt)";
-  else if (pathname === "/guides") headerColor = "var(--headerColor-guider)";
+  else if (pathname === "/annet") headerColor = "var(--headerColor-guider)";
   else if (pathname === "/om") headerColor = "var(--headerColor-om)";
 
   // her kan jeg legge til flere variabler for andre farger på andre sider
@@ -25,7 +25,7 @@ function Navbar() {
     >
       <section className="flex justify-between items-center p-6 w-full lg:w-2/3  ">
         <img
-          className="inklusign-logo"
+          className="inklusign-logo w-40 lg:w-50"
           src="/inklusign-human.svg"
           alt="Inklusign logo"
         />
@@ -39,7 +39,7 @@ function Navbar() {
             <Menu size={28} aria-label="Mobilmeny" />
           )}
         </button>
-        <ul className="hidden lg:flex gap-12 text-lg ml-10">
+        <ul className="hidden lg:flex gap-12 text-lg xl:text-xl ml-10">
           <li className="group relative">
             <a href="/" className="hover:text-black">
               Hjem
@@ -61,12 +61,6 @@ function Navbar() {
           <li className="group relative">
             <a href="/articles" className="hover:text-black">
               Artikler
-              <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </a>
-          </li>
-          <li className="group relative">
-            <a href="/guides" className="hover:text-black">
-              Guider
               <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
             </a>
           </li>
@@ -98,12 +92,6 @@ function Navbar() {
             <li className="group relative w-fit">
               <a href="/articles" className="hover:text-black">
                 Artikler
-                <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-              </a>
-            </li>
-            <li className="group relative w-fit">
-              <a href="/guides" className="hover:text-black">
-                Guider
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </a>
             </li>

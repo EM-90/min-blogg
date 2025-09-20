@@ -1,14 +1,18 @@
-import { fetchPostBySlug } from "@/sanity/lib/queries";
+// app/(...)/[articleId]/page.tsx
+import Image from "next/image";
+import { PortableText, type PortableTextComponents } from "next-sanity";
 import { notFound } from "next/navigation";
-import { PortableText } from "next-sanity";
+import { fetchPostBySlug } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
 
 interface ArticleIdProps {
-  params: Promise<{ articleId: string }>;
+  // Viktig: params skal ikke være Promise i App Router
+  params: { articleId: string };
 }
 
-const components = {
+const components: PortableTextComponents = {
   marks: {
-    link: ({ children, value }: any) => {
+    link: ({ children, value }) => {
       const href = value?.href || "#";
       return (
         <a
@@ -22,11 +26,47 @@ const components = {
       );
     },
   },
+  types: {
+    image: ({ value }) => {
+      if (!value?.asset?._ref) return null;
+
+      // Bruk et “fornuftig stort” mål for artikkelbredde
+      const targetW = 1200;
+      const ratio = value.aspectRatio || 16 / 9;
+      const targetH = Math.round(targetW / ratio);
+
+      const src = urlFor(value).width(targetW).fit("max").auto("format").url();
+
+      return (
+        <figure className="my-8">
+          <Image
+            src={src}
+            alt={value.alt || ""}
+            width={targetW}
+            height={targetH}
+            placeholder={value.lqip ? "blur" : "empty"}
+            blurDataURL={value.lqip}
+            sizes="(min-width: 1024px) 800px, 100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
+          {(value.caption || value.credit) && (
+            <figcaption className="mt-2 text-sm text-neutral-500">
+              {value.caption}
+              {value.credit
+                ? value.caption
+                  ? ` — ${value.credit}`
+                  : value.credit
+                : null}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
 };
 
 export default async function ArticleID({ params }: ArticleIdProps) {
-  const { articleId } = await params;
-
+  const { articleId } = params;
   const post = await fetchPostBySlug(articleId);
 
   if (!post) {

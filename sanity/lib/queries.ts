@@ -21,7 +21,20 @@ export async function fetchPosts(): Promise<Post[]> {
 }
 
 export async function fetchPostBySlug(slug: string): Promise<Post | null> {
-  const query = `*[_type == "post" && slug.current == $slug][0]`;
+  const query = `*[_type == "post" && slug.current == $slug][0]{
+    title,
+    slug,
+    body[]{
+      ...,
+      _type == "image" => {
+        ...,
+        "alt": alt,
+        "lqip": asset->metadata.lqip,
+        "aspectRatio": asset->metadata.dimensions.aspectRatio
+      }
+    }
+  }`;
+
   return await client.fetch(query, { slug });
 }
 

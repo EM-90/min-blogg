@@ -25,7 +25,7 @@ function Navbar() {
     >
       <section className="flex justify-between items-center p-6 w-full lg:w-2/3  ">
         <img
-          className="inklusign-logo w-40 lg:w-50"
+          className="inklusign-logo w-32 lg:w-38"
           src="/inklusign-human.svg"
           alt="Inklusign logo"
         />

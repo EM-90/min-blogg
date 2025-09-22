@@ -6,7 +6,6 @@ import { fetchPostBySlug } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
 interface ArticleIdProps {
-  // Viktig: params skal ikke være Promise i App Router
   params: { articleId: string };
 }
 

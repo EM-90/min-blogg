@@ -11,7 +11,7 @@ export const Header = ({ headerText, infoText, btn }: HeaderProps) => {
     <article className="w-full relative py-10 mb-20 ">
       <section>
         <h1
-          style={{ fontSize: "clamp(2.2rem, 6vw, 5rem)" }}
+          style={{ fontSize: "clamp(2.2rem, 4.4vw, 5rem)" }}
           className=" mb-3 xl:w-2/3 leading-tight font-regular"
         >
           {headerText}

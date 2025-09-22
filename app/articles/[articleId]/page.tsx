@@ -10,6 +10,13 @@ interface ArticleIdProps {
   params: { articleId: string };
 }
 
+// helper (kan stå over components)
+function alignClass(a?: string) {
+  if (a === "center") return "text-center";
+  if (a === "right") return "text-right";
+  return "text-left";
+}
+
 const components: PortableTextComponents = {
   marks: {
     link: ({ children, value }) => {
@@ -30,11 +37,9 @@ const components: PortableTextComponents = {
     image: ({ value }) => {
       if (!value?.asset?._ref) return null;
 
-      // Bruk et “fornuftig stort” mål for artikkelbredde
       const targetW = 1200;
       const ratio = value.aspectRatio || 16 / 9;
       const targetH = Math.round(targetW / ratio);
-
       const src = urlFor(value).width(targetW).fit("max").auto("format").url();
 
       return (
@@ -62,6 +67,59 @@ const components: PortableTextComponents = {
         </figure>
       );
     },
+
+    table: ({ value }) => {
+      if (!value?.columns?.length) return null;
+
+      const caption: string | undefined = value.caption;
+      const hasHeader: boolean = value.hasHeader ?? true;
+      const columns: string[] = value.columns ?? [];
+      const rows: { cells: string[] }[] = value.rows ?? [];
+      const align: string[] = value.align ?? []; // "left" | "center" | "right"
+
+      return (
+        <div className="my-6 overflow-x-auto">
+          <table className="w-full border-collapse text-lg">
+            {caption ? (
+              <caption className="caption-top mb-2 text-left text-neutral-700">
+                {caption}
+              </caption>
+            ) : null}
+
+            {hasHeader && (
+              <thead>
+                <tr>
+                  {columns.map((col, i) => (
+                    <th
+                      key={i}
+                      scope="col"
+                      className={`border border-neutral-300 bg-neutral-50 px-3 py-2 ${alignClass(align[i])}`}
+                    >
+                      {col}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            )}
+
+            <tbody>
+              {rows.map((r, ri) => (
+                <tr key={ri} className="bg-white">
+                  {columns.map((_, ci) => (
+                    <td
+                      key={ci}
+                      className={`border border-neutral-300 px-3 py-2 align-top ${alignClass(align[ci])}`}
+                    >
+                      {r.cells?.[ci] ?? ""}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
   },
 };
 
@@ -74,11 +132,11 @@ export default async function ArticleID({ params }: ArticleIdProps) {
   }
 
   return (
-    <section className="thisArticle text-balance flex flex-col justify-center max-w-[800px] mx-auto scale-z-100">
+    <section className="thisArticle flex flex-col justify-center max-w-[800px] mx-auto scale-z-100">
       <h1 className="text-3xl md:text-5xl xl:text-6xl font-medium">
         {post.title}
       </h1>
-      <div className="mt-4 text-[clamp(1rem,2.5vw,1.3rem)]">
+      <div className="mt-4 text-[clamp(1rem,2.5vw,1.3rem)] ">
         <PortableText value={post.body} components={components} />
       </div>
     </section>

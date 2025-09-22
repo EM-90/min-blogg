@@ -14,11 +14,11 @@ export default async function Home() {
     <section>
       <Header
         headerText="Design for alle er inkluderende design"
-        infoText="Artikler og skriv om hvordan tilgjengelighet kan gjøre siden din bedre"
+        infoText="Artikler om hvordan tilgjengelighet kan gjøre siden din bedre"
         btn={
           <Link
             href="/articles"
-            className=" cta-btn p-4 text-xl md:text-2xl font-light cursor-pointer text-white rounded-lg bg-slate-800 hover:bg-black border-none flex-row inline-flex gap-2 items-center"
+            className=" cta-btn p-4 text-xl md:text-2xl font-light cursor-pointer text-white rounded-lg bg-yellow-900  hover:outline-4 outline-black flex-row inline-flex gap-2 items-center"
           >
             Finn flere artikler
             <ArrowRightIcon />

@@ -36,7 +36,7 @@ const components: PortableTextComponents = {
     image: ({ value }) => {
       if (!value?.asset?._ref) return null;
 
-      const targetW = 500;
+      const targetW = 800;
       const ratio = value.aspectRatio || 16 / 9;
       const targetH = Math.round(targetW / ratio);
       const src = urlFor(value).width(targetW).fit("max").auto("format").url();
@@ -50,8 +50,12 @@ const components: PortableTextComponents = {
             height={targetH}
             placeholder={value.lqip ? "blur" : "empty"}
             blurDataURL={value.lqip}
-            sizes="(min-width: 1024px) 800px, 100vw"
-            style={{ width: "100%", height: "auto" }}
+            style={{
+              width: "100%",
+              height: "auto",
+              maxHeight: 520,
+              objectFit: "contain",
+            }}
           />
           {(value.caption || value.credit) && (
             <figcaption className="mt-2 text-sm text-neutral-500">

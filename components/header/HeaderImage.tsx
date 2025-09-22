@@ -1,31 +1,16 @@
-"use client"; // This makes HeaderImage a client component
-
+"use client";
 import { usePathname } from "next/navigation";
 
 const HeaderImage = () => {
   const pathname = usePathname();
-  console.log("Current Pathname:", pathname);
+  const hideHeader = pathname.startsWith("/articles/");
 
-  const getHeaderImage = () => {
-    switch (pathname) {
-      case "/":
-        return "/header-bg-home.svg";
-      case "/articles":
-        return "/header-inklusign-artikler.svg";
-      case "/kontakt":
-        return "/header-inklusign-kontakt.svg";
-      case "/annet":
-        return "/header-inklusign-annet.svg";
-      case "/om":
-        return "/header-inklusign-om.svg";
-      default:
-        return "/header-inklusign-artikler.svg";
-    }
-  };
-
+  if (hideHeader) {
+    return null;
+  }
   return (
     <img
-      src={getHeaderImage()}
+      src="/header-bg-home.svg"
       alt=""
       className="w-full absolute top-0 bg-cover hidden md:block"
     />

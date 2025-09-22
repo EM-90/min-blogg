@@ -20,8 +20,9 @@ const textFont = Lexend({
 const mainBgColor = "var(--main-bg-color)";
 
 export const metadata: Metadata = {
-  title: "UU-laben",
-  description: "Artiler, råd, tilgjengelighet og universelt utformet design",
+  title: "Inklusign",
+  description:
+    "Artikler om bedre design med hovedfokus på universell utforming og tilgjengelighet",
 };
 
 export default function RootLayout({

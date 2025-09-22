@@ -7,14 +7,14 @@ import { Menu, XIcon } from "lucide-react";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const pathname = usePathname();
+  //const pathname = usePathname();
 
   let headerColor = "var(--headerColor-hjem)";
 
-  if (pathname === "/articles") headerColor = "var(--headerColor-artikler)";
+  /*if (pathname === "/articles") headerColor = "var(--headerColor-artikler)";
   else if (pathname === "/kontakt") headerColor = "var(--headerColor-kontakt)";
   else if (pathname === "/annet") headerColor = "var(--headerColor-guider)";
-  else if (pathname === "/om") headerColor = "var(--headerColor-om)";
+  else if (pathname === "/om") headerColor = "var(--headerColor-om)";*/
 
   // her kan jeg legge til flere variabler for andre farger på andre sider
 
@@ -24,11 +24,13 @@ function Navbar() {
       className=" flex justify-center relative z-20"
     >
       <section className="flex justify-between items-center p-6 w-full lg:w-2/3  ">
-        <img
-          className="inklusign-logo w-32 lg:w-38"
-          src="/inklusign-human.svg"
-          alt="Inklusign logo"
-        />
+        <a href="/">
+          <img
+            className="inklusign-logo w-32 lg:w-38"
+            src="/inklusign-human.svg"
+            alt="Inklusign logo"
+          />
+        </a>
         <button
           className="text-black lg:hidden z-20"
           onClick={() => setIsOpen(!isOpen)}

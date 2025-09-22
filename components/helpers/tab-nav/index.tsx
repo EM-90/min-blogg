@@ -19,7 +19,7 @@ export default function FocusRing() {
       pointerEvents: "none",
       borderRadius: "12px",
       boxSizing: "border-box",
-      boxShadow: "0 0 0 6px rgba(5,57,199,0.9)", // tweak color
+      boxShadow: "0 0 0 6px #733E0A",
       transform: "translate3d(0,0,0)",
       transition:
         "transform 160ms ease, width 160ms ease, height 160ms ease, opacity 120ms ease",
@@ -61,7 +61,6 @@ export default function FocusRing() {
       if (el && el.matches?.(":focus-visible")) moveTo(el);
     };
 
-    // Hide when page loses focus or tab visibility changes
     const onWindowBlur = () => hide();
     const onVisibility = () => (document.hidden ? hide() : onScrollOrResize());
 
@@ -97,7 +96,6 @@ export default function FocusRing() {
     };
   }, []);
 
-  // Hide the ring on route changes
   useEffect(() => {
     if (ringRef.current) ringRef.current.style.opacity = "0";
   }, [pathname]);

@@ -36,7 +36,7 @@ const components: PortableTextComponents = {
     image: ({ value }) => {
       if (!value?.asset?._ref) return null;
 
-      const targetW = 1200;
+      const targetW = 500;
       const ratio = value.aspectRatio || 16 / 9;
       const targetH = Math.round(targetW / ratio);
       const src = urlFor(value).width(targetW).fit("max").auto("format").url();
@@ -122,13 +122,17 @@ const components: PortableTextComponents = {
   },
 };
 
-export default async function ArticleID({ params }: ArticleIdProps) {
-  const { articleId } = params;
-  const post = await fetchPostBySlug(articleId);
+type ArticleIdParams = { articleId: string };
 
-  if (!post) {
-    notFound();
-  }
+export default async function ArticleID({
+  params,
+}: {
+  params: Promise<ArticleIdParams>;
+}) {
+  const { articleId } = await params;
+
+  const post = await fetchPostBySlug(articleId);
+  if (!post) notFound();
 
   return (
     <section className="thisArticle flex flex-col justify-center max-w-[800px] mx-auto scale-z-100">

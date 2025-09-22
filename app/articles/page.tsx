@@ -36,7 +36,7 @@ export default async function Articles() {
                   ))
                 ) : (
                   <span className="text-transparent tracking-widest uppercase text-sm rounded-full">
-                    No category
+                    ingen kategori
                   </span>
                 )
               }

@@ -2,9 +2,10 @@ import { Article } from "@/components/article/Article";
 import { Header } from "@/components/header/Header";
 import { fetchRecentPosts } from "@/sanity/lib/queries";
 import { Tag } from "@/components/tag/Tag";
-import Link from "next/link";
+
 import { Post } from "@/types/post";
 import { ArrowRightIcon } from "lucide-react";
+import PrimaryCta from "@/components/buttons/primary-cta";
 
 export default async function Home() {
   let newPosts: Post[] = [];
@@ -15,21 +16,13 @@ export default async function Home() {
       <Header
         headerText="Design for alle er inkluderende design"
         infoText="Artikler om hvordan tilgjengelighet kan gjøre siden din bedre"
-        btn={
-          <Link
-            href="/articles"
-            className=" cta-btn p-4 text-xl md:text-2xl font-light cursor-pointer text-white rounded-lg bg-yellow-900  hover:outline-4 outline-black flex-row inline-flex gap-2 items-center"
-          >
-            Finn flere artikler
-            <ArrowRightIcon />
-          </Link>
-        }
+        btn={<PrimaryCta />}
       />
       <section>
-        <h2 className=" scale-z-100 text-3xl xl:text-4xl mb-9">
+        <h2 className=" scale-z-100 text-3xl xl:text-4xl mb-9 lg:pt-15 xl:pt-24">
           Nyeste artikler
         </h2>
-        <section className="flex flex-wrap gap-10">
+        <section className="grid gap-5 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))]">
           {newPosts.map((post) => (
             <Article
               key={post._id}

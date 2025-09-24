@@ -20,7 +20,7 @@ export default async function Articles() {
         infoText="Her finner du artikler om brukeropplevelser og tilgjengelighet"
       />
 
-      <section className="flex flex-wrap w-full scale-z-100 gap-10">
+      <section className="grid gap-5 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))] scale-z-100">
         {posts?.length ? (
           posts.map((post) => (
             <Article

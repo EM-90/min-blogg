@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <a
           href="#main-content"
-          className=" hidden lg:block  sr-onlyfocus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:p-3 focus:rounded focus:shadow focus:bg-[#ffbc03] focus:text-black focus:text-xl focus:font-bold focus:outline-black focus:outline-2"
+          className=" hidden lg:block  sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:p-3 focus:rounded focus:shadow focus:bg-black focus:text-white focus:text-xl focus:font-bold focus:outline-black focus:outline-2"
         >
           Hopp til hovedinnhold
         </a>
@@ -48,7 +48,7 @@ export default function RootLayout({
         <HeaderImage />
         <main
           id="main-content"
-          className="sm:w-2/3 mx-auto pl-6 pr-6 sm:pl-2 sm:pr-2 pt-10 mb-20 flex-1"
+          className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 pt-10 mb-20 flex-1"
         >
           {children}
         </main>

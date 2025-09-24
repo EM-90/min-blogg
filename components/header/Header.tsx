@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export const Header = ({ headerText, infoText, btn }: HeaderProps) => {
   return (
-    <section className="w-full relative py-10 mb-20 ">
+    <section className="w-full relative mb-20 ">
       <h1
         style={{ fontSize: "clamp(2.2rem, 4.4vw, 5rem)" }}
         className=" mb-3 xl:w-2/3 leading-tight font-regular"

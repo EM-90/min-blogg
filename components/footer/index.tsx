@@ -4,7 +4,7 @@ import React from "react";
 function Footer() {
   return (
     <footer className=" bg-[#fff2cf] text-black pb-5 pt-12">
-      <div className="w-2/3 mx-auto px-4">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <section className="flex flex-col md:flex-row justify-between items-center border-b border-[#ffbc03] pb-5">
           <div className="text-xl font-bold mb-4 md:mb-0">
             <img

@@ -1,6 +1,6 @@
 import { Header } from "@/components/header/Header";
 import React from "react";
-import { LinkedinIcon } from "@sanity/icons";
+import { ArrowUpRight } from "lucide-react";
 
 function Contact() {
   return (
@@ -9,22 +9,24 @@ function Contact() {
         headerText="Kontakt meg her"
         infoText="Forslag til tema innen tilgjengelighet, digitale flater som burde vært bedre utformet, eller annet? klikk på lenken nedenfor"
       />
-      <ul className="flex-col space-y-8 scale-z-100 text-lg lg:text-2xl">
+      <ul className="scale-z-100 text-lg lg:text-2xl space-y-5">
         <li>
           <a
             href="mailto:inklusign@gmail.no"
-            className="text-blue-600 underline hover:text-blue-900 transition-colors"
+            className="text-blue-600 hover:underline hover:text-blue-900 transition-colors flex items-center gap-2"
           >
-            Send mail med forslag om tema og lignende her
+            <span>Send mail med forslag om tema og lignende her</span>
+            <ArrowUpRight />
           </a>
         </li>
         <li className="flex items-center gap-4">
           <a
             href="https://www.linkedin.com/in/eirik-michielsen-48aa3421a/"
             target="_blank"
-            className="text-blue-600 underline hover:text-blue-900 transition-colors"
+            className="text-blue-600 hover:underline hover:text-blue-900 transition-colors flex items-center gap-2"
           >
-            For andre henvendelser ta kontakt på LinkedIn
+            <span>For andre henvendelser ta kontakt på LinkedIn</span>
+            <ArrowUpRight />
           </a>
         </li>
       </ul>

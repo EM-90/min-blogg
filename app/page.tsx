@@ -15,11 +15,11 @@ export default async function Home() {
     <section>
       <Header
         headerText="Design for alle er inkluderende design"
-        infoText="Artikler om hvordan tilgjengelighet kan gjøre siden din bedre"
+        infoText="Artikler om hvordan tilgjengelighet kan gjøre nettstedet ditt bedre"
         btn={<PrimaryCta />}
       />
       <section>
-        <h2 className=" scale-z-100 text-3xl xl:text-4xl mb-9 lg:pt-15 xl:pt-24">
+        <h2 className="text-3xl xl:text-4xl mb-9 lg:pt-15 xl:pt-24">
           Nyeste artikler
         </h2>
         <section className="grid gap-5 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))]">

@@ -28,7 +28,7 @@ export const Article = ({
 
   return (
     <Link href={`/articles/${articleSlug}`} className="group block h-full">
-      <article className="h-full flex gap-3 rounded-lg bg-[#FFFCF4] hover:bg-[#fff7e3] outline-2 hover:outline-black hover:outline-[5px] focus-visible:outline-black p-4 sm:p-6 text-[clamp(0.9rem,2.5vw,1rem)] ">
+      <article className="h-full flex gap-3 rounded-lg bg-[#FFFCF4] hover:bg-[#fff7e3] outline-2 hover:outline-black hover:outline-[5px] p-4 sm:p-6 text-[clamp(0.9rem,2.5vw,1rem)] ">
         <div>
           <div className="p-4 bg-[#FFE49A] rounded-full">
             <PencilRuler className="md:w-10 md:h-10 xl:w-12 xl:h-12 w-6 h-6" />

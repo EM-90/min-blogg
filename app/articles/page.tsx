@@ -3,6 +3,7 @@ import { Article } from "@/components/article/Article";
 import { Header } from "@/components/header/Header";
 import { Tag } from "@/components/tag/Tag";
 import { Post } from "@/types/post";
+import { isIconKey } from "@/components/article/IconMap";
 
 export default async function Articles() {
   let posts: Post[] = [];
@@ -29,6 +30,7 @@ export default async function Articles() {
               as="h2"
               articlePreview={post.preview}
               mainImage={post.mainImage}
+              iconKey={isIconKey(post.iconKey) ? post.iconKey : undefined}
               tagContainer={
                 post.categories?.length ? (
                   post.categories.map((category) => (

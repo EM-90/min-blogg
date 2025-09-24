@@ -38,6 +38,25 @@ export const postType = defineType({
       ],
     }),
     defineField({
+      name: "iconKey",
+      title: "icon",
+      type: "string",
+      options: {
+        list: [
+          { title: "Design", value: "palette" },
+          { title: "Dokument", value: "file-text" },
+          { title: "Utvikling", value: "code" },
+          { title: "tekst", value: "case-sensitive" },
+          { title: "Mobil", value: "smartphone" },
+          { title: "Ai", value: "brain-circuit" },
+          { title: "Undersøkelser", value: "chart-pie" },
+          { title: "Verktøy", value: "wrench" },
+          { title: "Skjermleser", value: "speech" },
+        ],
+        layout: "dropdown",
+      },
+    }),
+    defineField({
       name: "categories",
       type: "array",
       of: [defineArrayMember({ type: "reference", to: { type: "category" } })],

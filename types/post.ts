@@ -1,3 +1,5 @@
+import { IconKey } from "@/components/article/IconMap";
+
 export interface Category {
   _id: string;
   title: string;
@@ -12,5 +14,6 @@ export interface Post {
   body: any;
   mainImage?: string;
   publishedAt: string;
+  iconKey?: string | null;
   categories: Category[];
 }

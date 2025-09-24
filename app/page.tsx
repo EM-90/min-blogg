@@ -2,10 +2,9 @@ import { Article } from "@/components/article/Article";
 import { Header } from "@/components/header/Header";
 import { fetchRecentPosts } from "@/sanity/lib/queries";
 import { Tag } from "@/components/tag/Tag";
-
 import { Post } from "@/types/post";
-import { ArrowRightIcon } from "lucide-react";
 import PrimaryCta from "@/components/buttons/primary-cta";
+import { isIconKey } from "@/components/article/IconMap";
 
 export default async function Home() {
   let newPosts: Post[] = [];
@@ -29,6 +28,7 @@ export default async function Home() {
               articleHeader={post.title}
               articleSlug={post.slug.current}
               mainImage={post.mainImage}
+              iconKey={isIconKey(post.iconKey) ? post.iconKey : undefined}
               tagContainer={
                 Array.isArray(post.categories) && post.categories.length > 0 ? (
                   post.categories.map((category) => (

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { PortableText } from "next-sanity";
 import Link from "next/link";
-import { PencilRuler } from "lucide-react";
+import { IconFromKey, IconKey } from "./IconMap";
 
 type HeadingTag = "h2" | "h3";
 
@@ -10,7 +10,7 @@ interface ArticleProps {
   articlePreview?: string;
   articleText?: any;
   tagContainer?: ReactNode;
-  icon?: ReactNode;
+  iconKey?: IconKey;
   mainImage?: string;
   articleSlug: string;
   as?: HeadingTag;
@@ -21,7 +21,7 @@ export const Article = ({
   articleText,
   tagContainer,
   articleSlug,
-  icon,
+  iconKey,
   as = "h3",
 }: ArticleProps) => {
   const Heading = as;
@@ -31,12 +31,16 @@ export const Article = ({
       <article className="h-full flex gap-3 rounded-lg bg-[#FFFCF4] hover:bg-[#fff7e3] outline-2 hover:outline-black hover:outline-[5px] p-4 sm:p-6 text-[clamp(0.9rem,2.5vw,1rem)] ">
         <div>
           <div className="p-4 bg-[#FFE49A] rounded-full">
-            <PencilRuler className="md:w-10 md:h-10 xl:w-12 xl:h-12 w-6 h-6" />
+            {iconKey && (
+              <IconFromKey
+                iconKey={iconKey}
+                className="md:w-10 md:h-10 xl:w-12 xl:h-12 w-6 h-6"
+              />
+            )}
           </div>
         </div>
 
-        <section className=" ">
-          {icon}
+        <section>
           <div className="pb-1">{tagContainer}</div>
           <Heading className="text-lg sm:text-[1.4rem]   font-medium mb-2 group-hover:underline line-clamp-3">
             {articleHeader}

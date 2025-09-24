@@ -1,14 +1,17 @@
+// sanity/lib/queries.ts
 import { client } from "./client";
-import { Post } from "@/types/post";
+import type { Post } from "@/types/post";
 
 export async function fetchPosts(): Promise<Post[]> {
   return client.fetch(`
-    *[_type == "post" && !(_id in path("drafts.**"))]{
+    *[_type == "post" && !(_id in path("drafts.**"))]
+    | order(publishedAt desc) {
       _id,
       title,
-      slug,
+      slug,                                      
       "preview": array::join(string::split(pt::text(body), " ")[0..20], " ") + "...",
       body,
+      iconKey,                                   
       categories[]->{
         _id,
         title,
@@ -16,7 +19,7 @@ export async function fetchPosts(): Promise<Post[]> {
       },
       "mainImage": mainImage.asset->url,
       publishedAt
-    } | order(publishedAt desc)
+    }
   `);
 }
 
@@ -49,6 +52,7 @@ export async function fetchRecentPosts(limit = 3) {
         slug,
         "preview": array::join(string::split((pt::text(body)), " ")[0..20], " ") + "...",
         body,
+        iconKey,
         categories[]->{
         _id,
         title,

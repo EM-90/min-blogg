@@ -1,5 +1,6 @@
 import { LinkedinIcon } from "@sanity/icons";
 import React from "react";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -17,14 +18,17 @@ function Footer() {
           <nav aria-label="Footer navigation" className="flex">
             <ul className="flex flex-wrap gap-4 justify-center">
               <li>
-                <a href="/about" className="hover:text-gray-900">
+                <Link
+                  href="/tilgjengelighetserklaering"
+                  className="hover:text-gray-900"
+                >
                   Tilgjengelighetserklæring
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/privacy" className="hover:text-gray-900">
+                <Link href="/personvern" className="hover:text-gray-900">
                   Personvern
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -34,7 +38,7 @@ function Footer() {
           <address className="not-italic text-center md:text-left mb-4 md:mb-0">
             <p>
               <a
-                href="mailto:inklusign@gmail.no"
+                href="mailto:inklusign@gmail.com"
                 className="hover:text-gray-900"
               >
                 Inklusign@gmail.com

@@ -9,6 +9,7 @@ import {
   Wrench,
   Speech,
   HelpCircle,
+  Monitor,
 } from "lucide-react";
 
 export const iconKeys = [
@@ -21,6 +22,7 @@ export const iconKeys = [
   "chart-pie",
   "wrench",
   "speech",
+  "monitor",
 ] as const;
 
 export type IconKey = (typeof iconKeys)[number];
@@ -45,6 +47,7 @@ const ICON_MAP: Record<
   "chart-pie": ChartPie,
   wrench: Wrench,
   speech: Speech,
+  monitor: Monitor,
 };
 
 /**
@@ -56,7 +59,7 @@ export function IconFromKey({
   className,
   "aria-label": ariaLabel,
 }: {
-  iconKey?: string | null; // kan komme rett fra Sanity
+  iconKey?: string | null;
   className?: string;
   "aria-label"?: string;
 }) {

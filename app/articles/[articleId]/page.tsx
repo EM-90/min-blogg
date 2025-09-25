@@ -18,12 +18,13 @@ function alignClass(a?: string) {
 
 const components: PortableTextComponents = {
   marks: {
+    // beholdt din lenke
     link: ({ children, value }) => {
       const href = value?.href || "#";
       return (
         <a
           href={href}
-          className="text-blue-800 underline hover:text-blue-500 transition-colors"
+          className="text-blue-800 underline underline-offset-2 decoration-2 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -31,7 +32,56 @@ const components: PortableTextComponents = {
         </a>
       );
     },
+    // fine å ha for konsekvent vekt/italic
+    strong: ({ children }) => (
+      <strong className="font-semibold">{children}</strong>
+    ),
+    em: ({ children }) => <em className="italic">{children}</em>,
   },
+
+  // --------- BLOCKS (TYPO & SPACING) ----------
+  block: {
+    // brødtekst – jevn rytme
+    normal: ({ children }) => <p className="mt-0 mb-[0.9em]">{children}</p>,
+
+    // overskrifter: mer luft over enn under
+    h1: ({ children }) => (
+      <h1 className="text-3xl md:text-4xl font-bold leading-tight mt-[2.5em] mb-[0.7em]">
+        {children}
+      </h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="text-2xl md:text-3xl font-semibold leading-snug mt-[2.0em] mb-[0.7em]">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="text-xl md:text-2xl font-semibold leading-snug mt-[1.6em] mb-[0.6em]">
+        {children}
+      </h3>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-neutral-300 pl-4 italic my-6">
+        {children}
+      </blockquote>
+    ),
+  },
+
+  // --------- LISTS ----------
+  list: {
+    bullet: ({ children }) => (
+      <ul className="my-4 ml-6 list-disc space-y-2">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="my-4 ml-6 list-decimal space-y-2">{children}</ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="pl-1">{children}</li>,
+    number: ({ children }) => <li className="pl-1">{children}</li>,
+  },
+
+  // --------- TYPES (BEHOLDT) ----------
   types: {
     image: ({ value }) => {
       if (!value?.asset?._ref) return null;
@@ -82,7 +132,7 @@ const components: PortableTextComponents = {
 
       return (
         <div className="my-6 overflow-x-auto">
-          <table className="w-full border-collapse text-lg">
+          <table className="w-full border-collapse text-base md:text-lg">
             {caption ? (
               <caption className="caption-top mb-2 text-left text-neutral-700">
                 {caption}
@@ -139,7 +189,7 @@ export default async function ArticleID({
   if (!post) notFound();
 
   return (
-    <section className="thisArticle flex flex-col justify-center max-w-[800px] mx-auto scale-z-100">
+    <section className="mx-auto max-w-[85ch] px-4 text-[18px] md:text-[19px] leading-[1.7] scale-z-100">
       <h1 className="text-3xl md:text-5xl xl:text-6xl font-medium">
         {post.title}
       </h1>

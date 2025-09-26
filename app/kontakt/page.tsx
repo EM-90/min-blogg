@@ -13,7 +13,7 @@ function Contact() {
         <li>
           <a
             href="mailto:inklusign@gmail.no"
-            className="text-blue-600 hover:underline hover:text-blue-900 transition-colors flex items-center gap-2"
+            className="text-yellow-900 hover:underline hover:text-black transition-colors flex items-center gap-2"
           >
             <span>Send mail med forslag om tema og lignende her</span>
             <ArrowUpRight />
@@ -23,7 +23,7 @@ function Contact() {
           <a
             href="https://www.linkedin.com/in/eirik-michielsen-48aa3421a/"
             target="_blank"
-            className="text-blue-600 hover:underline hover:text-blue-900 transition-colors flex items-center gap-2"
+            className="text-yellow-900 hover:underline hover:text-black transition-colors flex items-center gap-2"
           >
             <span>For andre henvendelser ta kontakt på LinkedIn</span>
             <ArrowUpRight />

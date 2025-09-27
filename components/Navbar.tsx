@@ -2,20 +2,12 @@
 import React from "react";
 import { useState } from "react";
 import { Menu, XIcon } from "lucide-react";
+import Link from "next/link";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  //const pathname = usePathname();
-
-  let headerColor = "var(--headerColor-hjem)";
-
-  /*if (pathname === "/articles") headerColor = "var(--headerColor-artikler)";
-  else if (pathname === "/kontakt") headerColor = "var(--headerColor-kontakt)";
-  else if (pathname === "/annet") headerColor = "var(--headerColor-guider)";
-  else if (pathname === "/om") headerColor = "var(--headerColor-om)";*/
-
-  // her kan jeg legge til flere variabler for andre farger på andre sider
+  const headerColor = "var(--headerColor-hjem)";
 
   return (
     <nav
@@ -42,28 +34,28 @@ function Navbar() {
         </button>
         <ul className="hidden lg:flex gap-12 text-lg xl:text-xl ml-10">
           <li className="group relative">
-            <a href="/" className="hover:text-black">
+            <Link href="/" className="hover:text-black">
               Hjem
               <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </a>
+            </Link>
           </li>
           <li className="group relative">
-            <a href="/kontakt" className="hover:text-black">
+            <Link href="/kontakt" className="hover:text-black">
               Kontakt
               <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </a>
+            </Link>
           </li>
           <li className="group relative">
-            <a href="/om" className="hover:text-black">
+            <Link href="/om" className="hover:text-black">
               Om
               <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </a>
+            </Link>
           </li>
           <li className="group relative">
-            <a href="/articles" className="hover:text-black">
+            <Link href="/articles" className="hover:text-black">
               Artikler
               <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -73,28 +65,28 @@ function Navbar() {
             className="lg:hidden flex flex-col pt-20 pl-10 text-3xl w-full  space-y-15 text-white  h-screen absolute top-16 right-0"
           >
             <li className="group relative w-fit">
-              <a href="/" className="hover:text-black">
+              <Link href="/" className="hover:text-black">
                 Hjem
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-              </a>
+              </Link>
             </li>
             <li className="group relative w-fit">
-              <a href="/kontakt" className="hover:text-black">
+              <Link href="/kontakt" className="hover:text-black">
                 Kontakt
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-              </a>
+              </Link>
             </li>
             <li className="group relative w-fit">
-              <a href="/om" className="hover:text-black">
+              <Link href="/om" className="hover:text-black">
                 Om
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-              </a>
+              </Link>
             </li>
             <li className="group relative w-fit">
-              <a href="/articles" className="hover:text-black">
+              <Link href="/articles" className="hover:text-black">
                 Artikler
                 <span className="block h-0.5 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-              </a>
+              </Link>
             </li>
           </ul>
         )}

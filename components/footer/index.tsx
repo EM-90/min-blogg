@@ -1,6 +1,7 @@
 import { LinkedinIcon } from "@sanity/icons";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function Footer() {
   return (
@@ -8,10 +9,11 @@ function Footer() {
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <section className="flex flex-col md:flex-row justify-between items-center border-b border-[#ffbc03] pb-5">
           <div className="text-xl font-bold mb-4 md:mb-0">
-            <img
+            <Image
               src="/inklusign-human.svg"
               alt="Inklusign logo"
-              className="w-27"
+              width={110}
+              height={100}
             />
           </div>
 

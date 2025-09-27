@@ -6,7 +6,6 @@ export default function FocusRing() {
   const pathname = usePathname();
   const ringRef = useRef<HTMLDivElement | null>(null);
 
-  // Create the ring once, set up listeners
   useEffect(() => {
     const ring = document.createElement("div");
     ring.id = "kb-focus-ring";
@@ -30,20 +29,26 @@ export default function FocusRing() {
     ringRef.current = ring;
 
     const hide = () => {
-      ringRef.current && (ringRef.current.style.opacity = "0");
+      if (ringRef.current) {
+        ringRef.current.style.opacity = "0";
+      }
     };
+
     const PADDING = 6;
 
     const moveTo = (el: HTMLElement) => {
       const r = el.getBoundingClientRect();
-      if (r.width === 0 || r.height === 0) return hide();
-      const x = Math.round(r.left) - PADDING; // no scrollX for fixed
-      const y = Math.round(r.top) - PADDING; // no scrollY for fixed
+      if (r.width === 0 || r.height === 0) {
+        hide();
+        return;
+      }
+      const x = Math.round(r.left) - PADDING;
+      const y = Math.round(r.top) - PADDING;
       const w = Math.round(r.width) + PADDING * 2;
       const h = Math.round(r.height) + PADDING * 2;
 
-      ring.style.width = w + "px";
-      ring.style.height = h + "px";
+      ring.style.width = `${w}px`;
+      ring.style.height = `${h}px`;
       ring.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       ring.style.opacity = "1";
     };
@@ -51,18 +56,35 @@ export default function FocusRing() {
     const onFocusIn = (e: FocusEvent) => {
       const el = e.target as HTMLElement | null;
       if (!el) return;
-      if (!el.matches?.(":focus-visible")) return hide();
+      if (!el.matches?.(":focus-visible")) {
+        hide();
+        return;
+      }
       moveTo(el);
     };
 
-    const onPointer = () => hide();
-    const onScrollOrResize = () => {
-      const el = document.activeElement as HTMLElement | null;
-      if (el && el.matches?.(":focus-visible")) moveTo(el);
+    const onPointer = () => {
+      hide();
     };
 
-    const onWindowBlur = () => hide();
-    const onVisibility = () => (document.hidden ? hide() : onScrollOrResize());
+    const onScrollOrResize = () => {
+      const el = document.activeElement as HTMLElement | null;
+      if (el && el.matches?.(":focus-visible")) {
+        moveTo(el);
+      }
+    };
+
+    const onWindowBlur = () => {
+      hide();
+    };
+
+    const onVisibility = () => {
+      if (document.hidden) {
+        hide();
+      } else {
+        onScrollOrResize();
+      }
+    };
 
     // Respect reduced motion
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -72,7 +94,11 @@ export default function FocusRing() {
         : "transform 160ms ease, width 160ms ease, height 160ms ease, opacity 120ms ease";
     };
     setMotion();
-    mq.addEventListener?.("change", setMotion);
+    if (typeof mq.addEventListener === "function") {
+      mq.addEventListener("change", setMotion);
+    } else {
+      mq.addListener?.(setMotion);
+    }
 
     window.addEventListener("focusin", onFocusIn, true);
     window.addEventListener("pointerdown", onPointer, true);
@@ -81,7 +107,9 @@ export default function FocusRing() {
     window.addEventListener("blur", onWindowBlur);
     document.addEventListener("visibilitychange", onVisibility);
 
-    if (!document.hasFocus()) hide();
+    if (!document.hasFocus()) {
+      hide();
+    }
 
     return () => {
       window.removeEventListener("focusin", onFocusIn, true);
@@ -90,14 +118,21 @@ export default function FocusRing() {
       window.removeEventListener("scroll", onScrollOrResize, true);
       window.removeEventListener("blur", onWindowBlur);
       document.removeEventListener("visibilitychange", onVisibility);
-      mq.removeEventListener?.("change", setMotion);
+      if (typeof mq.removeEventListener === "function") {
+        mq.removeEventListener("change", setMotion);
+      } else {
+        // @ts-ignore
+        mq.removeListener?.(setMotion);
+      }
       ring.remove();
       ringRef.current = null;
     };
   }, []);
 
   useEffect(() => {
-    if (ringRef.current) ringRef.current.style.opacity = "0";
+    if (ringRef.current) {
+      ringRef.current.style.opacity = "0";
+    }
   }, [pathname]);
 
   return null;

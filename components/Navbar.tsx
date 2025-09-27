@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { Menu, XIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +17,10 @@ function Navbar() {
     >
       <section className="flex justify-between items-center p-6 mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <a href="/">
-          <img
-            className="inklusign-logo w-32 lg:w-38"
+          <Image
             src="/inklusign-human.svg"
+            width={130}
+            height={40}
             alt="Inklusign logo"
           />
         </a>

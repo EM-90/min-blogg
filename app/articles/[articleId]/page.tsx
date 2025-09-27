@@ -5,10 +5,6 @@ import { notFound } from "next/navigation";
 import { fetchPostBySlug } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
-interface ArticleIdProps {
-  params: { articleId: string };
-}
-
 // helper (kan stå over components)
 function alignClass(a?: string) {
   if (a === "center") return "text-center";

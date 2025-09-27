@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { PortableText } from "next-sanity";
+import { PortableTextBlock } from "sanity";
 import Link from "next/link";
 import { IconFromKey, IconKey } from "./IconMap";
 
@@ -8,7 +9,7 @@ type HeadingTag = "h2" | "h3";
 interface ArticleProps {
   articleHeader: string;
   articlePreview?: string;
-  articleText?: any;
+  articleText?: PortableTextBlock[];
   tagContainer?: ReactNode;
   iconKey?: IconKey;
   mainImage?: string;

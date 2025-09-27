@@ -121,7 +121,6 @@ export default function FocusRing() {
       if (typeof mq.removeEventListener === "function") {
         mq.removeEventListener("change", setMotion);
       } else {
-        // @ts-ignore
         mq.removeListener?.(setMotion);
       }
       ring.remove();

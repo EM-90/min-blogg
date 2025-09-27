@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Playfair_Display, Poppins, Lexend } from "next/font/google";
+import { Lexend } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import HeaderImage from "@/components/header/HeaderImage";
 import FocusRing from "@/components/helpers/tab-nav";
@@ -17,8 +17,6 @@ const textFont = Lexend({
   weight: ["200", "300", "400"],
   variable: "--text-font",
 });
-
-const mainBgColor = "var(--main-bg-color)";
 
 export const metadata: Metadata = {
   title: "Inklusign",

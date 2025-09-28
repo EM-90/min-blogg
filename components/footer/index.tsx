@@ -54,6 +54,7 @@ function Footer() {
               <li>
                 <a
                   href="https://www.linkedin.com/in/eirik-michielsen-48aa3421a/"
+                  aria-label="LinkedIn"
                   target="_blank"
                   className="hover:text-gray-900 flex items-center hover:bg-[#ffbc03] rounded-lg"
                 >

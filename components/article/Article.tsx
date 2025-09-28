@@ -28,7 +28,11 @@ export const Article = ({
   const Heading = as;
 
   return (
-    <Link href={`/articles/${articleSlug}`} className="group block h-full">
+    <Link
+      href={`/articles/${articleSlug}`}
+      className="group block h-full"
+      aria-label={articleHeader}
+    >
       <article className="h-full flex gap-3 rounded-lg bg-[#FFFCF4] hover:bg-[#fff7e3] active:bg-[#fff7e3] outline-2 hover:outline-black active:outline-black active:outline-[5px] hover:outline-[5px] p-4 sm:p-6 text-[clamp(0.9rem,2.5vw,1rem)] ">
         <div>
           <div className="p-4 bg-[#FFE49A] rounded-full">

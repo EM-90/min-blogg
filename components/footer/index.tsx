@@ -65,9 +65,7 @@ function Footer() {
           </nav>
         </section>
 
-        <p className="mt-6 text-end text-sm text-gray-500">
-          © 2025 Inklusign. Alle rettigheter reservert.
-        </p>
+        <p className="mt-6 text-end text-sm text-gray-500">© 2025 Inklusign</p>
       </div>
     </footer>
   );

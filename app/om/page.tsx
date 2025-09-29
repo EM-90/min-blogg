@@ -7,9 +7,9 @@ function About() {
     <section>
       <Header
         headerText="Hva er Inklusign?"
-        infoText="Navnet Inklusign er en kombinasjon av inkluderende og design. Det gjenspeiler prosjektets mål: å fremme universell utforming som en naturlig del av godt design"
+        infoText="Navnet Inklusign er en kombinasjon av inkluderende og design. Det gjenspeiler prosjektets mål, som er å fremme universell utforming som en naturlig del av godt design"
       />
-      <section className="flex flex-col-reverse scale-z-105">
+      <section className="flex scale-z-100">
         <InfoCard
           headerText="Hvorfor finnes dette nettstedet?"
           textContent={[

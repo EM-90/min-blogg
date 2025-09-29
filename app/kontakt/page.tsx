@@ -6,8 +6,8 @@ function Contact() {
   return (
     <section>
       <Header
-        headerText="Kontakt meg her"
-        infoText="Forslag til tema innen tilgjengelighet, digitale flater som burde vært bedre utformet, eller annet? klikk på lenken nedenfor"
+        headerText="Kontakt"
+        infoText="Her finner du kontaktinformasjon"
       />
       <ul className="scale-z-100 text-lg lg:text-2xl space-y-5">
         <li>

@@ -7,7 +7,7 @@ function Tilgjengelighetserklaering() {
     <section>
       <Header
         headerText="Tilgjengelighets&shy;erklæring"
-        infoText="Denne erklæringen kommer etter hvert. Jeg har forsøkt å gjøre siden så tilgjengelig som mulig fra jeg startet prosjektet."
+        infoText="Jeg har forsøkt å gjøre siden så tilgjengelig som mulig fra starten av prosjektet. Erklæringen kommer etter hvert, og nettstedet skal forbedres"
       />
     </section>
   );

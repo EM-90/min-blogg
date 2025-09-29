@@ -9,11 +9,12 @@ export interface Category {
 export interface Post {
   _id: string;
   title: string;
+  date: string;
   slug: { current: string };
   preview: string;
   body: any;
   mainImage?: string;
-  publishedAt: string;
+  publishedAt?: string;
   iconKey?: string | null;
   categories: Category[];
 }

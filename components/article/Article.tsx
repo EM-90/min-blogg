@@ -8,6 +8,7 @@ type HeadingTag = "h2" | "h3";
 
 interface ArticleProps {
   articleHeader: string;
+  created?: string;
   articlePreview?: string;
   articleText?: PortableTextBlock[];
   tagContainer?: ReactNode;
@@ -19,6 +20,7 @@ interface ArticleProps {
 
 export const Article = ({
   articleHeader,
+  created,
   articleText,
   tagContainer,
   articleSlug,
@@ -45,11 +47,26 @@ export const Article = ({
           </div>
         </div>
 
-        <section>
-          <div className="pb-1">{tagContainer}</div>
-          <Heading className="text-lg sm:text-[1.4rem]   font-medium mb-2 group-hover:underline line-clamp-3">
-            {articleHeader}
-          </Heading>
+        <section className="flex flex-col justify-between">
+          <div>
+            <div className="pb-1">{tagContainer}</div>
+            <Heading className="text-lg sm:text-[1.4rem]   font-medium mb-2 group-hover:underline line-clamp-3">
+              {articleHeader}
+            </Heading>
+          </div>
+          {created && (
+            <time
+              dateTime={new Date(created).toISOString().split("T")[0]}
+              className="text-md text-neutral-600 block mb-2 "
+            >
+              {new Date(created).toLocaleDateString("nb-NO", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+                timeZone: "UTC",
+              })}
+            </time>
+          )}
         </section>
         <div className="mt-3">
           {articleText && <PortableText value={articleText} />}

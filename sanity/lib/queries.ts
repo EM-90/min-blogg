@@ -5,20 +5,20 @@ import type { Post } from "@/types/post";
 export async function fetchPosts(): Promise<Post[]> {
   return client.fetch(`
     *[_type == "post" && !(_id in path("drafts.**"))]
-    | order(publishedAt desc) {
+    | order(coalesce(publishedAt, _createdAt) desc) {
       _id,
       title,
-      slug,                                      
-      "preview": array::join(string::split(pt::text(body), " ")[0..20], " ") + "...",
+      slug,
+      "preview": coalesce(
+        array::join(string::split(pt::text(body), " ")[0..20], " ") + "...",
+        ""
+      ),
       body,
-      iconKey,                                   
-      categories[]->{
-        _id,
-        title,
-        slug
-      },
+      iconKey,
+      categories[]->{ _id, title, slug },
       "mainImage": mainImage.asset->url,
-      publishedAt
+      "date": coalesce(publishedAt, _createdAt),
+      "publishedAt": publishedAt
     }
   `);
 }
@@ -41,31 +41,25 @@ export async function fetchPostBySlug(slug: string): Promise<Post | null> {
   return await client.fetch(query, { slug });
 }
 
-export async function fetchRecentPosts(limit = 3) {
-  try {
-    return await client.fetch(
-      `
-      *[_type == "post" && !(_id in path("drafts.**"))]
-      | order(publishedAt desc)[0...$limit]{
-        _id,
-        title,
-        slug,
-        "preview": array::join(string::split((pt::text(body)), " ")[0..20], " ") + "...",
-        body,
-        iconKey,
-        categories[]->{
-        _id,
-        title,
-        slug
-      },
-        "mainImage": mainImage.asset->url,
-        publishedAt
-      } | order(publishedAt desc) [0...$limit]
-    `,
-      { limit }
-    );
-  } catch (error) {
-    console.error("Error fetching recent posts:", error);
-    return [];
-  }
+export async function fetchRecentPosts(limit = 3): Promise<Post[]> {
+  const query = `
+    *[_type == "post" && !(_id in path("drafts.**"))]
+    | order(coalesce(publishedAt, _createdAt) desc)
+    [0...$limit]{
+      _id,
+      title,
+      slug,
+      "preview": coalesce(
+        array::join(string::split(pt::text(body), " ")[0..20], " ") + "...",
+        ""
+      ),
+      body,
+      iconKey,
+      categories[]->{ _id, title, slug },
+      "mainImage": mainImage.asset->url,
+      "date": coalesce(publishedAt, _createdAt),
+      "publishedAt": publishedAt
+    }
+  `;
+  return client.fetch(query, { limit });
 }

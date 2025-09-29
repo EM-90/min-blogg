@@ -25,6 +25,7 @@ export default async function Home() {
           {newPosts.map((post) => (
             <Article
               key={post._id}
+              created={post.date}
               articleHeader={post.title}
               articleSlug={post.slug.current}
               mainImage={post.mainImage}

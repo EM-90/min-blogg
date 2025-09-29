@@ -26,6 +26,7 @@ export default async function Articles() {
           posts.map((post) => (
             <Article
               key={post._id}
+              created={post.date}
               articleHeader={post.title}
               as="h2"
               articlePreview={post.preview}

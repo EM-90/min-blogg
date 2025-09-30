@@ -41,7 +41,9 @@ export default function RootLayout({
         >
           Hopp til hovedinnhold
         </a>
-        <Navbar />
+        <div className="sticky top-0 inset-x-0 z-50">
+          <Navbar />
+        </div>
         <FocusRing />
         <HeaderImage />
         <main

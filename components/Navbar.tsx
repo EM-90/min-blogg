@@ -30,7 +30,7 @@ function Navbar() {
   return (
     <nav
       style={{ backgroundColor: headerColor }}
-      className="flex justify-center relative z-20"
+      className="flex justify-center z-20"
     >
       <section className="flex justify-between items-center p-6 mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="Gå til forsiden">
@@ -55,7 +55,7 @@ function Navbar() {
         </button>
 
         {/* Desktop menu */}
-        <ul className="hidden lg:flex gap-12 text-lg xl:text-xl ml-10">
+        <ul className="hidden lg:flex gap-12 text-lg xl:text-xl ml-10 relative">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link href={href} className={linkClasses(href)}>
@@ -71,7 +71,7 @@ function Navbar() {
             id="mobile-menu"
             role="menu"
             style={{ backgroundColor: headerColor }}
-            className="lg:hidden flex flex-col pt-20 pl-10 text-3xl w-full space-y-6 text-white h-screen absolute top-16 right-0"
+            className="lg:hidden flex flex-col pt-20 pl-10 text-3xl w-full space-y-6 text-white h-screen absolute top-full right-0"
           >
             {navLinks.map(({ href, label }) => (
               <li key={href}>

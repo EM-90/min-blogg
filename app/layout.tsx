@@ -18,10 +18,13 @@ const textFont = Lexend({
   variable: "--text-font",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Inklusign",
   description:
-    "Artikler om bedre design med hovedfokus på universell utforming og tilgjengelighet",
+    "Artikler om tilgjengelighet, universell utforming og inkluderende design",
+  icons: {
+    icon: null,
+  },
 };
 
 export default function RootLayout({

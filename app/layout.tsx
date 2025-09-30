@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="no" className={`${headerFont.variable} ${textFont.variable}`}>
       <body
-        style={{ backgroundColor: "#fffcf4" }}
+        style={{ backgroundColor: "#fffbee" }}
         className="min-h-screen flex flex-col"
       >
         <a

@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className=" bg-[#fff2cf] text-black pb-5 pt-12">
       <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-        <section className="flex flex-col md:flex-row justify-between items-center border-b border-[#ffbc03] pb-5">
+        <section className="flex flex-col md:flex-row justify-between items-center border-b border-[#c08d00] pb-5">
           <div className="text-xl font-bold mb-4 md:mb-0">
             <Image
               src="/inklusign-human.svg"
@@ -46,9 +46,7 @@ function Footer() {
                 Inklusign@gmail.com
               </a>
             </p>
-            <p className="text-sm">(Kan også kontaktes på LinkedIn)</p>
           </address>
-
           <nav aria-label="Sosiale medier">
             <ul className="flex space-x-4">
               <li>

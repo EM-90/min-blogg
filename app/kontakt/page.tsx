@@ -12,7 +12,7 @@ function Contact() {
       <ul className="scale-z-100 text-lg lg:text-2xl space-y-5">
         <li>
           <a
-            href="mailto:inklusign@gmail.no"
+            href="mailto:inklusign@gmail.com"
             className="text-yellow-900 hover:underline hover:text-black transition-colors flex items-center gap-2"
           >
             <span>Send mail med forslag om tema og lignende her</span>

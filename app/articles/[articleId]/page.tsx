@@ -210,15 +210,12 @@ const components: PortableTextComponents = {
   },
 };
 
-type ArticleIdParams = { articleId: string };
-
 export default async function ArticleID({
   params,
 }: {
-  params: Promise<ArticleIdParams>;
+  params: { articleId: string };
 }) {
-  const { articleId } = await params;
-
+  const { articleId } = params;
   const post = await fetchPostBySlug(articleId);
   if (!post) notFound();
 

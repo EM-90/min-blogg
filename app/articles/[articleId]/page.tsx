@@ -5,6 +5,9 @@ import { fetchPostBySlug } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { Metadata } from "next";
 
+type Params = { articleId: string };
+type Props = { params: Promise<Params> };
+
 function titleFromSlug(s?: string) {
   if (!s) return "Artikkel";
   return decodeURIComponent(s)
@@ -13,15 +16,11 @@ function titleFromSlug(s?: string) {
     .join(" ");
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { articleId: string };
-}): Promise<Metadata> {
-  const slug = params.articleId;
-  const title = titleFromSlug(slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { articleId } = await params;
+  const title = titleFromSlug(articleId);
   const description = `Les «${title}» på Inklusign.`;
-  const path = `/articles/${slug}`;
+  const path = `/articles/${articleId}`;
 
   return {
     title,
@@ -68,7 +67,7 @@ const components: PortableTextComponents = {
         </a>
       );
     },
-    // fine å ha for konsekvent vekt/italic
+
     strong: ({ children }) => (
       <strong className="font-semibold">{children}</strong>
     ),
@@ -212,12 +211,8 @@ const components: PortableTextComponents = {
   },
 };
 
-export default async function ArticleID({
-  params,
-}: {
-  params: { articleId: string };
-}) {
-  const { articleId } = params;
+export default async function Page({ params }: Props) {
+  const { articleId } = await params;
   const post = await fetchPostBySlug(articleId);
   if (!post) notFound();
 

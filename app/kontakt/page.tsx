@@ -9,7 +9,7 @@ function Contact() {
         headerText="Kontakt"
         infoText="Her finner du kontaktinformasjon"
       />
-      <ul className="scale-z-100 text-lg lg:text-2xl space-y-5">
+      <ul className="scale-z-100 text-lg lg:text-2xl space-y-10 inline-block ">
         <li>
           <a
             href="mailto:inklusign@gmail.com"
@@ -19,7 +19,7 @@ function Contact() {
             <ArrowUpRight />
           </a>
         </li>
-        <li className="flex items-center gap-4">
+        <li>
           <a
             href="https://www.linkedin.com/in/eirik-michielsen-48aa3421a/"
             target="_blank"

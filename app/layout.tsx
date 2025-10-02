@@ -21,9 +21,11 @@ const textFont = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "Inklusign",
+  title: "Hjem",
   description:
-    "Artikler om tilgjengelighet, universell utforming og inkluderende design",
+    "Artikler om hvordan tilgjengelighet kan gjøre nettstedet ditt bedre – universell utforming, WCAG og praktiske tips.",
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
 };
 
 export default function RootLayout({

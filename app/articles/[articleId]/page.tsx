@@ -3,6 +3,49 @@ import { PortableText, type PortableTextComponents } from "next-sanity";
 import { notFound } from "next/navigation";
 import { fetchPostBySlug } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
+import { Metadata } from "next";
+
+function titleFromSlug(s?: string) {
+  if (!s) return "Artikkel";
+  return decodeURIComponent(s)
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { articleId: string };
+}): Promise<Metadata> {
+  const slug = params.articleId;
+  const title = titleFromSlug(slug);
+  const description = `Les «${title}» på Inklusign.`;
+  const path = `/articles/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url: path,
+      images: [
+        { url: "/og/og-default.jpg", width: 1200, height: 630, alt: title },
+      ],
+      locale: "nb_NO",
+      siteName: "Inklusign",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og/og-default.jpg"],
+    },
+  };
+}
 
 function alignClass(a?: string) {
   if (a === "center") return "text-center";

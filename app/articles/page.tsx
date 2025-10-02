@@ -4,6 +4,15 @@ import { Header } from "@/components/header/Header";
 import { Tag } from "@/components/tag/Tag";
 import { Post } from "@/types/post";
 import { isIconKey } from "@/components/article/IconMap";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Artikler",
+  description:
+    "Her finner du artikler om brukeropplevelser og tilgjengelighet – universell utforming, WCAG og inkluderende design.",
+  alternates: { canonical: "/articles" },
+  openGraph: { url: "/articles" },
+};
 
 export default async function Articles() {
   let posts: Post[] = [];

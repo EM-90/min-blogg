@@ -1,6 +1,15 @@
 import React from "react";
 import { Header } from "@/components/header/Header";
 import { InfoCard } from "@/components/info/InfoCard";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Om",
+  description:
+    "Inklusign kombinerer inkluderende og design, et prosjekt som fremmer universell utforming som en naturlig del av godt design.",
+  alternates: { canonical: "/om" },
+  openGraph: { url: "/om" },
+};
 
 function About() {
   return (

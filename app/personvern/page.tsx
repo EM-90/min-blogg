@@ -1,5 +1,14 @@
 import { Header } from "@/components/header/Header";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Personvern",
+  description:
+    "Jeg bruker Vercel Analytics for anonym besøksstatistikk. Ingen cookies og ingen identifiserbare data.",
+  alternates: { canonical: "/personvern" },
+  openGraph: { url: "/personvern" },
+};
 
 function Personvern() {
   return (

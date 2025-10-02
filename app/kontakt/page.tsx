@@ -1,6 +1,15 @@
 import { Header } from "@/components/header/Header";
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kontakt",
+  description:
+    "Ta kontakt hvis du har et tema du mener jeg burde skrive om på siden.",
+  alternates: { canonical: "/kontakt" },
+  openGraph: { url: "/kontakt" },
+};
 
 function Contact() {
   return (

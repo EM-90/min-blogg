@@ -7,7 +7,7 @@ import PrimaryCta from "@/components/buttons/primary-cta";
 import { isIconKey } from "@/components/article/IconMap";
 import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Hjem",
   description:
     "Inklusign - Artikler om hvordan tilgjengelighet kan gjøre nettstedet ditt bedre",

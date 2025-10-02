@@ -21,11 +21,24 @@ const textFont = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "Hjem",
+  metadataBase: new URL("https://inklusign.no"),
+  openGraph: {
+    siteName: "Inklusign",
+    locale: "nb_NO",
+    images: [
+      { url: "/og/og-default.jpg", width: 1200, height: 630, alt: "Inklusign" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og/og-default.jpg"],
+  },
+  title: {
+    default: "Inklusign - design for alle",
+    template: "%s | Inklusign",
+  },
   description:
     "Artikler om hvordan tilgjengelighet kan gjøre nettstedet ditt bedre – universell utforming, WCAG og praktiske tips.",
-  alternates: { canonical: "/" },
-  openGraph: { url: "/" },
 };
 
 export default function RootLayout({

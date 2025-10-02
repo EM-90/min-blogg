@@ -5,6 +5,14 @@ import { Tag } from "@/components/tag/Tag";
 import { Post } from "@/types/post";
 import PrimaryCta from "@/components/buttons/primary-cta";
 import { isIconKey } from "@/components/article/IconMap";
+import { Metadata } from "next";
+
+export const metadata = {
+  title: "Hjem",
+  description:
+    "Inklusign - Artikler om hvordan tilgjengelighet kan gjøre nettstedet ditt bedre",
+  alternates: { canonical: "/" },
+};
 
 export default async function Home() {
   let newPosts: Post[] = [];

@@ -34,8 +34,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         { url: "/og/og-default.jpg", width: 1200, height: 630, alt: title },
       ],
-      locale: "nb_NO",
-      siteName: "Inklusign",
     },
     twitter: {
       card: "summary_large_image",

@@ -1,11 +1,9 @@
-// app/(...)/[articleId]/page.tsx
 import Image from "next/image";
 import { PortableText, type PortableTextComponents } from "next-sanity";
 import { notFound } from "next/navigation";
 import { fetchPostBySlug } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
-// helper (kan stå over components)
 function alignClass(a?: string) {
   if (a === "center") return "text-center";
   if (a === "right") return "text-right";
@@ -14,7 +12,6 @@ function alignClass(a?: string) {
 
 const components: PortableTextComponents = {
   marks: {
-    // beholdt din lenke
     link: ({ children, value }) => {
       const href = value?.href || "#";
       return (

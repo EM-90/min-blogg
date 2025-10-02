@@ -13,11 +13,9 @@ function titleFromSlug(s?: string) {
     .join(" ");
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { articleId: string };
-}): Promise<Metadata> {
+type Props = { params: { articleId: string } };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.articleId;
   const title = titleFromSlug(slug);
   const description = `Les «${title}» på Inklusign.`;

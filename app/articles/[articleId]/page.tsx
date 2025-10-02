@@ -3,7 +3,7 @@ import { PortableText, type PortableTextComponents } from "next-sanity";
 import { notFound } from "next/navigation";
 import { fetchPostBySlug } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 function titleFromSlug(s?: string) {
   if (!s) return "Artikkel";

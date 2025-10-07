@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Inklusign",
     locale: "nb_NO",
     images: [
-      { url: "/og/og-default.jpg", width: 1200, height: 630, alt: "Inklusign" },
+      { url: "/og/og-default.png", width: 1200, height: 630, alt: "Inklusign" },
     ],
   },
   twitter: {

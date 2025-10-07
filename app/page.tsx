@@ -8,7 +8,7 @@ import { isIconKey } from "@/components/article/IconMap";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hjem",
+  title: "Inklusign",
   description:
     "Inklusign - Artikler om hvordan tilgjengelighet kan gjøre nettstedet ditt bedre",
   alternates: { canonical: "/" },

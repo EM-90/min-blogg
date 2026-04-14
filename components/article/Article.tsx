@@ -30,12 +30,8 @@ export const Article = ({
   const Heading = as;
 
   return (
-    <Link
-      href={`/articles/${articleSlug}`}
-      className="group block h-full"
-      aria-label={articleHeader}
-    >
-      <article className="h-full flex gap-3 rounded-lg bg-[#FFFCF4] hover:bg-[#fcf3dc] active:bg-[#fff7e3] outline-2 hover:outline-black active:outline-black active:outline-[5px] hover:outline-[5px] p-4 sm:p-6 text-[clamp(0.9rem,2.5vw,1rem)] ">
+    <li className=" list-none">
+      <article className="group relative h-full flex gap-3 rounded-lg bg-[#FFFCF4] hover:bg-[#fcf3dc] active:bg-[#fff7e3] outline-2 hover:outline-black active:outline-black active:outline-[5px] hover:outline-[5px] p-4 sm:p-6 text-[clamp(0.9rem,2.5vw,1rem)] ">
         <div>
           <div className="p-4 bg-[#FFE49A] rounded-full">
             {iconKey && (
@@ -47,12 +43,17 @@ export const Article = ({
           </div>
         </div>
 
-        <section className="flex flex-col justify-between">
+        <div className=" flex flex-col justify-between">
           <div>
             <div className="pb-1">{tagContainer}</div>
-            <Heading className="text-lg sm:text-[1.4rem]   font-medium mb-2 group-hover:underline line-clamp-3">
-              {articleHeader}
-            </Heading>
+            <Link
+              href={`/articles/${articleSlug}`}
+              className="h-full w-full before:absolute before:inset-0 before:z-10 before:content-['']"
+            >
+              <Heading className="text-lg sm:text-[1.4rem]   font-medium mb-2 group-hover:underline line-clamp-3">
+                {articleHeader}
+              </Heading>
+            </Link>
           </div>
           {created && (
             <time
@@ -67,11 +68,11 @@ export const Article = ({
               })}
             </time>
           )}
-        </section>
+        </div>
         <div className="mt-3">
           {articleText && <PortableText value={articleText} />}
         </div>
       </article>
-    </Link>
+    </li>
   );
 };

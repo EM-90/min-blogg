@@ -29,7 +29,10 @@ export default async function Home() {
         <h2 className="text-3xl xl:text-4xl mb-9 lg:pt-15 xl:pt-24">
           Nyeste artikler
         </h2>
-        <section className="grid gap-5 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))]">
+        <ul
+          className="grid gap-5 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))]"
+          aria-label="Artikler"
+        >
           {newPosts.map((post) => (
             <Article
               key={post._id}
@@ -51,7 +54,7 @@ export default async function Home() {
               }
             />
           ))}
-        </section>
+        </ul>
       </section>
     </section>
   );

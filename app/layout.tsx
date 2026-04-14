@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="no" className={`${headerFont.variable} ${textFont.variable}`}>
+    <html lang="nb" className={`${headerFont.variable} ${textFont.variable}`}>
       <body
         style={{ backgroundColor: "#fffbee" }}
         className="min-h-screen flex flex-col"

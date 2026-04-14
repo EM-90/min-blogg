@@ -30,7 +30,10 @@ export default async function Articles() {
         infoText="Her finner du artikler om brukeropplevelser og tilgjengelighet"
       />
 
-      <section className="grid gap-5 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))] scale-100">
+      <ul
+        className="grid gap-5 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(370px,1fr))] scale-100"
+        aria-label="Artikler"
+      >
         {posts?.length ? (
           posts.map((post) => (
             <Article
@@ -58,7 +61,7 @@ export default async function Articles() {
         ) : (
           <p>Laster artikler...</p>
         )}
-      </section>
+      </ul>
     </section>
   );
 }

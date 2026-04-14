@@ -30,7 +30,7 @@ function Navbar() {
   return (
     <nav
       style={{ backgroundColor: headerColor }}
-      className="flex justify-center z-20"
+      className="flex justify-center"
     >
       <section className="flex justify-between items-center p-6 mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="Gå til forsiden">
@@ -45,7 +45,7 @@ function Navbar() {
 
         {/* Mobile toggle button */}
         <button
-          className="text-black lg:hidden z-20"
+          className="text-black lg:hidden z-10"
           onClick={() => setIsOpen((v) => !v)}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"

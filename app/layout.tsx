@@ -59,11 +59,11 @@ export default function RootLayout({
       >
         <a
           href="#main-content"
-          className=" hidden lg:block  sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:p-3 focus:rounded focus:shadow focus:bg-black focus:text-white focus:text-xl focus:font-bold focus:outline-black focus:outline-2"
+          className=" lg:block sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-30 focus:p-3 focus:rounded focus:shadow focus:bg-black focus:text-white focus:text-xl focus:font-bold focus:outline-black focus:outline-2"
         >
           Hopp til hovedinnhold
         </a>
-        <div className="sticky top-0 inset-x-0 z-50">
+        <div className="sticky top-0 inset-x-0 z-20">
           <Navbar />
         </div>
         <FocusRing />

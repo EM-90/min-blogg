@@ -10,7 +10,7 @@ export const Tag = ({ tag }: TagProps) => {
   return (
     <span
       key={tag._id}
-      className="py-1 tracking-widest text-gray-500 uppercase text-sm rounded-full"
+      className="py-1 tracking-widest text-gray-600 uppercase text-sm rounded-full"
       aria-label="Emneknagg"
     >
       {tag.title}

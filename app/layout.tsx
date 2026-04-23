@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Lexend } from "next/font/google";
+import { Atkinson_Hyperlegible, Lexend, Manrope } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import HeaderImage from "@/components/header/HeaderImage";
 import FocusRing from "@/components/helpers/tab-nav";
@@ -8,15 +8,15 @@ import Footer from "@/components/footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const headerFont = Lexend({
+const headerFont = Atkinson_Hyperlegible({
   subsets: ["latin"],
-  weight: ["400", "600", "800"],
+  weight: ["400"],
   variable: "--header-font",
 });
 
-const textFont = Lexend({
+const textFont = Atkinson_Hyperlegible({
   subsets: ["latin"],
-  weight: ["200", "300", "400"],
+  weight: ["400"],
   variable: "--text-font",
 });
 

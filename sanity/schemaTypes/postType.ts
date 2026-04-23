@@ -53,6 +53,7 @@ export const postType = defineType({
           { title: "Verktøy", value: "wrench" },
           { title: "Skjermleser", value: "speech" },
           { title: "Generelt om UU", value: "monitor" },
+          { title: "Regler og standarder", value: "scale" },
         ],
         layout: "dropdown",
       },

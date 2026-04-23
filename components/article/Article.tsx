@@ -37,7 +37,7 @@ export const Article = ({
             {iconKey && (
               <IconFromKey
                 iconKey={iconKey}
-                className="md:w-10 md:h-10 xl:w-12 xl:h-12 w-6 h-6"
+                className="md:w-9 md:h-9 xl:w-11 xl:h-11 w-6 h-6"
               />
             )}
           </div>

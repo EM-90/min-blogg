@@ -10,6 +10,7 @@ import {
   Speech,
   HelpCircle,
   Monitor,
+  Scale,
 } from "lucide-react";
 
 export const iconKeys = [
@@ -23,6 +24,7 @@ export const iconKeys = [
   "wrench",
   "speech",
   "monitor",
+  "scale",
 ] as const;
 
 export type IconKey = (typeof iconKeys)[number];
@@ -48,6 +50,7 @@ const ICON_MAP: Record<
   wrench: Wrench,
   speech: Speech,
   monitor: Monitor,
+  scale: Scale,
 };
 
 /**

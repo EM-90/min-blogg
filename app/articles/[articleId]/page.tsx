@@ -75,21 +75,21 @@ const components: PortableTextComponents = {
   // --------- BLOCKS (TYPO & SPACING) ----------
   block: {
     // brødtekst – jevn rytme
-    normal: ({ children }) => <p className="mt-0 mb-[0.9em]">{children}</p>,
+    normal: ({ children }) => <p className=" mt-0 mb-[2em]">{children}</p>,
 
     // overskrifter: mer luft over enn under
     h1: ({ children }) => (
-      <h1 className="text-3xl md:text-4xl font-bold leading-tight mt-[2.5em] mb-[0.7em]">
+      <h1 className="text-2xl md:text-4xl font-bold leading-tight mt-[2.5em] mb-[0.7em]">
         {children}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-2xl md:text-3xl font-semibold leading-snug mt-[2.0em] mb-[0.7em]">
+      <h2 className="text-2xl md:text-4xl leading-snug mt-[2.0em] mb-[0.6em]">
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-xl md:text-2xl font-semibold leading-snug mt-[1.6em] mb-[0.6em]">
+      <h3 className="text-xl md:text-2xl leading-snug mt-[1.6em] mb-[0.6em]">
         {children}
       </h3>
     ),
@@ -103,7 +103,7 @@ const components: PortableTextComponents = {
   // --------- LISTS ----------
   list: {
     bullet: ({ children }) => (
-      <ul className="my-4 ml-6 list-disc space-y-2">{children}</ul>
+      <ul className="my-6 ml-6 list-disc space-y-2">{children}</ul>
     ),
     number: ({ children }) => (
       <ol className="my-4 ml-6 list-decimal space-y-2">{children}</ol>

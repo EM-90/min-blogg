@@ -2,8 +2,11 @@
 import { client } from "./client";
 import type { Post } from "@/types/post";
 
+const REFRESH_INTERVAL = 60;
+
 export async function fetchPosts(): Promise<Post[]> {
-  return client.fetch(`
+  return client.fetch(
+    `
     *[_type == "post" && !(_id in path("drafts.**"))]
     | order(coalesce(publishedAt, _createdAt) desc) {
       _id,
@@ -20,7 +23,10 @@ export async function fetchPosts(): Promise<Post[]> {
       "date": coalesce(publishedAt, _createdAt),
       "publishedAt": publishedAt
     }
-  `);
+  `,
+    {},
+    { next: { revalidate: REFRESH_INTERVAL } },
+  );
 }
 
 export async function fetchPostBySlug(slug: string): Promise<Post | null> {
@@ -38,7 +44,11 @@ export async function fetchPostBySlug(slug: string): Promise<Post | null> {
     }
   }`;
 
-  return await client.fetch(query, { slug });
+  return await client.fetch(
+    query,
+    { slug },
+    { next: { revalidate: REFRESH_INTERVAL } },
+  );
 }
 
 export async function fetchRecentPosts(limit = 3): Promise<Post[]> {
@@ -61,5 +71,9 @@ export async function fetchRecentPosts(limit = 3): Promise<Post[]> {
       "publishedAt": publishedAt
     }
   `;
-  return client.fetch(query, { limit });
+  return client.fetch(
+    query,
+    { limit },
+    { next: { revalidate: REFRESH_INTERVAL } },
+  );
 }
